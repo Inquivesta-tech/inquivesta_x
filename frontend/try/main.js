@@ -4,14 +4,14 @@
   var texture;
   var normal_speed = 0.0008;
   var hyperspeed = 53;
-  var hyperspeed_mode = false;
+  var hyperspeed_mode = true;
   var hyperspeed_upratio = 1.03;
   var hyperspeed_downratio = 1.3;
-  var current_speed = normal_speed;
+  var current_speed = hyperspeed;
 
   var hyperspeed_upscale = 1.03;
   var hyperspeed_downscale = 1.3;
-  var current_scale = 1;
+  var current_scale = 0.1;
 
   init();
   animate();
@@ -124,13 +124,11 @@
 
   }
 
-  onClick()
   setTimeout(
     ()=>{
       document.getElementById("zzz").classList = ["zoom1"]
       setTimeout(onRelease(),100)
-    },3000
+    },1600
   )
-
 
 })();
