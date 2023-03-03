@@ -124,4 +124,13 @@
 
   }
 
+  onClick()
+  setTimeout(
+    ()=>{
+      document.getElementById("zzz").classList = ["zoom1"]
+      setTimeout(onRelease(),100)
+    },3000
+  )
+
+
 })();
