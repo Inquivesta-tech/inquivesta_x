@@ -19,7 +19,18 @@
 </head>
 <body>
 
-    <div style="width: 100%;height: 100vh; display: flex;justify-content: center;align-items: center;">
+    <div id="earthContainer" style="height:100vh;width: 100vw;overflow: hidden;display: flex;align-items: center;flex-direction: column;justify-content:flex-start;position: absolute;z-index: 2;">
+        <img src="/frontend/assests/images/Earth.png" id="earth" class="initialEarth" alt="" >
+        <div class="stage" id="butterfly" onclick="zoomearth()">
+            <div class="mariposa">
+              <div class="mariposa-turn">
+                <div class="mariposa-flutter"></div>
+              </div>
+            </div>
+          </div>          
+    </div>
+
+    <div style="width: 100%;height: 100vh; display: flex;justify-content: center;align-items: center;position: absolute;z-index: 1;">
         <img src="/frontend/assests/logos/logo.png" alt="" class="zoom0" id="zzz">
     </div>
 

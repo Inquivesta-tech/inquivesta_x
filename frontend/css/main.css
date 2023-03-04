@@ -1,87 +1,39 @@
-/* *{
-    padding: 0;
-    margin: 0;
-}
-
-body{
-    background-color: #000;
-    color: #fff;
-}
-
-nav{
-    width: 100vw;
-    height: 10vh;
-}
-
-ul{
-    height: 10vh;
-    width: inherit;
-    display: flex;
-    flex-flow: row wrap;
-
-    list-style-type: none;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center
-}
-
-li{
-    float: left;
-    padding-left: 5vw;
-    padding-right: 5vw;
-} */
-
-
-@import "compass/css3";
-
-@keyframes roundandround {
-  to {
-    transform: rotateX(360deg);
-  }
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: #000000;
-}
-.scene {
-  width:600px;
-  height:600px;
-  margin: 0 auto;
-  perspective:500px;
-}
-.wrapper {
-  width:100%;
-  height:100%;
-  transform-style: preserve-3d;
-  transform: rotateY(0deg) translateZ(300px);
-}
-.tunnel {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin:0 auto;
-  transform-style: preserve-3d;
-  animation: roundandround 10s infinite linear;
-}
-.tunnel .ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border:6px;
-  border-style: dashed;
-  border-radius: 50%;
-  transform-origin: 50% 50%;
-  color:#8df435;
-  transform: translateY(-200px);
+  background-color: #000;
+  color: #fff;
 }
 
-/* SASS optimisation thanks to @imjared */
-@for $i from 1 through 72 {
-  .ring:nth-child(#{$i}) {
-    color: hsl($i * 5deg, 100, 50);
-    transform: rotateX($i * 5deg) translateY(-200px);
+@keyframes zoomEarth {
+  0% {
+    height: 100vh;
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    height: 100vh;
+    scale: 50;
+    opacity: 0;
+    display: none;
   }
 }
 
+.initialEarth {
+  height: 100vh;
+  scale: 1;
+  opacity: 1;
+}
+
+.finalEarth {
+  animation-name: zoomEarth;
+  animation-duration: 1s;
+}
+
+.displayNone{
+    display: none;
+}
