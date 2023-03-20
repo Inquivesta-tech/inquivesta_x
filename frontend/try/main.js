@@ -4,7 +4,9 @@ var texture;
 var normal_speed = 0.0008;
 var hyperspeed = 53;
 var hyperspeed_mode = true;
-var hyperspeed_upratio = 1.03;
+var hyperspeed_upratio = 1.2;
+// var hyperspeed_Transition_mode = false;
+// var hyperspeed_Transition_upratio = 1.2;
 var hyperspeed_downratio = 1.3;
 var current_speed = hyperspeed;
 
@@ -59,14 +61,17 @@ function init() {
   cylinder.rotation.x = Math.PI / 2;
   scene.add(cylinder);
 
-  //				document.addEventListener( 'keydown', onKeyDown, false );
+  window.addEventListener('resize', onWindowResize, false);
+  document.addEventListener( 'keydown', temp, true );
+  document.addEventListener('touchstart', temp, true);
   // document.addEventListener('mousedown', onClick, false);
-  // document.addEventListener('touchstart', onClick, false);
   // document.addEventListener('mouseup', onRelease, false);
+  // document.addEventListener( 'keyup', onRelease, true );
+  // document.addEventListener('touchstart', onClick, false);
   // document.addEventListener('touchend', onRelease, false);
-  // window.addEventListener('resize', onWindowResize, false);
   // document.addEventListener('wheel', onClick, false);
   // document.addEventListener( 'scrolldown', onRelease, false );
+  // document.addEventListener( 'scrollup', onRelease, false );
 }
 
 function onKeyDown(event) {
@@ -91,7 +96,6 @@ function onWindowResize() {
 }
 
 function animate() {
-
   requestAnimationFrame(animate);
   render();
 
@@ -123,26 +127,67 @@ function render() {
 
 }
 
-// setTimeout(
-//   () => {
-//     document.getElementById("zzz").classList = ["zoom1"]
-//     setTimeout(onRelease(), 100)
-//   }, 1600
-// )
+setTimeout(
+  () => {
+    document.getElementById("0").classList.remove("displaynone")
+    document.getElementById("0").classList = ["zoom1 child"]
+    setTimeout(onRelease(), 100)
+  }, 1600
+)
 
-function zoomearth() {
-  document.getElementById("earth").classList = ["finalEarth"]
-  document.getElementById("butterfly").classList = ["displayNone"]
-  setTimeout(
-      ()=>{
-          document.getElementById("earth").classList = ["displayNone"]
-          document.getElementById("earthContainer").classList = ["displayNone"]
-          setTimeout(
-            () => {
-              document.getElementById("zzz").classList = ["zoom1"]
-              setTimeout(onRelease(), 100)
-            }, 1600
-          )
-      },900
-  )
+// function zoomearth() {
+//   document.getElementById("earth").classList = ["finalEarth"]
+//   document.getElementById("butterfly").classList = ["displayNone"]
+//   setTimeout(
+//       ()=>{
+//           document.getElementById("earth").classList = ["displayNone"]
+//           document.getElementById("earthContainer").classList = ["displayNone"]
+//           setTimeout(
+//             () => {
+//               document.getElementById("0").classList = ["zoom1"]
+//               setTimeout(onRelease(), 100)
+//             }, 1600
+//           )
+//       },900
+//   )
+// }
+
+
+// Navigation logic
+
+inId = 0
+outId = "blank"
+current = 0
+
+function divSwitcher(inId,outId) {
+  document.getElementById(inId).classList.remove("zoom2")
+  document.getElementById(outId).classList.add("zoom2")
+  document.getElementById(outId).classList.remove("zoom1")
+  setTimeout(() => {
+    document.getElementById(inId).classList.remove("displaynone")
+    document.getElementById(outId).classList.add("displaynone")
+    document.getElementById(inId).classList.add("zoom1")
+  }, 700);
+}
+
+function nextDiv(event) {
+  onClick()
+  setTimeout(() => {
+    onRelease()
+  }, 700);
+  divSwitcher(String(inId),String(outId))
+}
+
+function temp(event) {
+  length = document.getElementsByClassName("child").length;
+  current+=1
+  outId = inId
+  inId = current
+  if (current === 5) {
+    current = 0
+    inId = 0
+  }
+  console.log(inId, outId);
+  nextDiv()
+
 }
