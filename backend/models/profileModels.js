@@ -19,6 +19,9 @@ const profileSchema = new mongoose.Schema(
             minlength: 8,
             select: false,
         },
+        events: {
+            type: [],
+        }
 
         // TODO: Add a password change functionality
 
