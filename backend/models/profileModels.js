@@ -21,7 +21,15 @@ const profileSchema = new mongoose.Schema(
         },
         events: {
             type: [],
-        }
+        },
+        payments: [
+            {
+                type: mongoose.Types.ObjectId,
+                ref: "PaymetDetails"
+            }
+        ],
+        accessKey : String,
+
 
         // TODO: Add a password change functionality
 
