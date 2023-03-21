@@ -1,10 +1,12 @@
 const crypto = require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
+const User = require('../models/profileModels');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
-const Email = require('../utils/email');
+// const Email = require('../utils/email'); 
+// We don't require this since we won't be sending them emails
+// TODO: Add send grid mailing api
 
 const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
