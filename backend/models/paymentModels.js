@@ -5,7 +5,7 @@ const verificationStatus = {
     Verified : "Verified",
     TransactionFailed : "Failed",
     VerificationInProcess : "InProcess"
-};
+}
 
 /* The Transaction ID is a map type which takes in  */
 const paymentDetails = new mongoose.Schema(
@@ -32,4 +32,4 @@ const paymentSchema = new mongoose.Schema(
 
 const Payments = mongoose.model("Payments", paymentSchema);
 
-module.exports = Payments;
+modules.export =. Payments;
