@@ -1,0 +1,1 @@
+  @babel/polyfill axios bcryptjs cookie-parser  dotenv express express-mongo-sanitize express-rate-limit helmet hpp html-to-text jsonwebtoken mongoose morgan multer nodemailer pug sharp slugify stripe validator xss-clean

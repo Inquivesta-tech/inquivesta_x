@@ -118,9 +118,9 @@ function render() {
   var seconds = Date.now() / 1000;
   var radius = 0.70;
   var angle = 0.2 * seconds;
-  //angle	= (seconds*Math.PI)/4;
-  //				camera.position.x	= Math.cos(angle - Math.PI/2) * radius;
-  //				camera.position.y	= Math.sin(angle - Math.PI/2) * radius;
+  // angle	= (seconds*Math.PI)/4;
+  // camera.position.x	= Math.cos(angle*10 - Math.PI/2) * radius;
+  // camera.position.y	= Math.sin(angle*10 - Math.PI/2) * radius;
   camera.rotation.z = angle;
 
   renderer.render(scene, camera);
@@ -160,6 +160,12 @@ outId = "blank"
 current = 0
 
 function divSwitcher(inId,outId) {
+
+  onClick()
+  setTimeout(() => {
+    onRelease()
+  }, 700);
+  
   document.getElementById(inId).classList.remove("zoom2")
   document.getElementById(outId).classList.add("zoom2")
   document.getElementById(outId).classList.remove("zoom1")
@@ -168,14 +174,6 @@ function divSwitcher(inId,outId) {
     document.getElementById(outId).classList.add("displaynone")
     document.getElementById(inId).classList.add("zoom1")
   }, 700);
-}
-
-function nextDiv(event) {
-  onClick()
-  setTimeout(() => {
-    onRelease()
-  }, 700);
-  divSwitcher(String(inId),String(outId))
 }
 
 function temp(event) {
@@ -188,6 +186,5 @@ function temp(event) {
     inId = 0
   }
   console.log(inId, outId);
-  nextDiv()
-
+  divSwitcher(String(inId),String(outId))
 }
