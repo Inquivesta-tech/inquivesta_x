@@ -62,8 +62,8 @@ function init() {
   scene.add(cylinder);
 
   window.addEventListener('resize', onWindowResize, false);
-  document.addEventListener( 'keydown', temp, true );
-  document.addEventListener('touchstart', temp, true);
+  // document.addEventListener( 'keydown', temp, true );
+  // document.addEventListener('touchstart', temp, true);
   // document.addEventListener('mousedown', onClick, false);
   // document.addEventListener('mouseup', onRelease, false);
   // document.addEventListener( 'keyup', onRelease, true );
@@ -176,15 +176,21 @@ function divSwitcher(inId,outId) {
   }, 700);
 }
 
-function temp(event) {
-  length = document.getElementsByClassName("child").length;
-  current+=1
+function switchDivTo(Id) {
   outId = inId
-  inId = current
-  if (current === 4) {
-    current = 0
-    inId = 0
-  }
-  console.log(inId, outId);
-  divSwitcher(String(inId),String(outId))
+  inId = Id
+  divSwitcher(inId,outId)
 }
+
+// function temp(event) {
+//   length = document.getElementsByClassName("child").length;
+//   current+=1
+//   outId = inId
+//   inId = current
+//   if (current === 4) {
+//     current = 0
+//     inId = 0
+//   }
+//   console.log(inId, outId);
+//   divSwitcher(String(inId),String(outId))
+// }
