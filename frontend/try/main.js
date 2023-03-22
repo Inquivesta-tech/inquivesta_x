@@ -159,13 +159,13 @@ inId = 0
 outId = "blank"
 current = 0
 
-function divSwitcher(inId,outId) {
+function divSwitcher(inId, outId) {
 
   onClick()
   setTimeout(() => {
     onRelease()
   }, 700);
-  
+
   document.getElementById(inId).classList.remove("zoom2")
   document.getElementById(outId).classList.add("zoom2")
   document.getElementById(outId).classList.remove("zoom1")
@@ -177,9 +177,11 @@ function divSwitcher(inId,outId) {
 }
 
 function switchDivTo(Id) {
-  outId = inId
-  inId = Id
-  divSwitcher(inId,outId)
+  if (inId != Id) {
+    outId = inId
+    inId = Id
+    divSwitcher(inId, outId)
+  }
 }
 
 // function temp(event) {
