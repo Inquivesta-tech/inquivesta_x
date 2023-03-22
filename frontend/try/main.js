@@ -181,7 +181,7 @@ function temp(event) {
   current+=1
   outId = inId
   inId = current
-  if (current === 5) {
+  if (current === 4) {
     current = 0
     inId = 0
   }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,14 +12,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <style>
-        canvas{
-            position:absolute;
-            left:0;
-            top:0;
-            z-index:-1;
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
         }
     </style>
 </head>
+
 <body>
     <!-- <div id="earthContainer" style="height:100vh;width: 100vw;overflow: hidden;display: flex;align-items: center;flex-direction: column;justify-content:flex-start;position: absolute;z-index: 2;">
         <img src="/frontend/assests/images/Earth.png" id="earth" class="initialEarth" alt="" >
@@ -31,29 +33,201 @@
           </div>          
     </div> -->
 
-    <div style="width: 100%;height: 100vh; display: flex;justify-content: center;align-items: center;position: absolute;z-index: 1;max-width: 100vw;" id="mainContainer">
+    <div style="width: 100%;height: 100vh; display: flex;justify-content: center;align-items: center;position: absolute;z-index: 1;max-width: 100vw;"
+        id="mainContainer">
 
         <div class="displaynone child" id="0">
             <img src="/frontend/assests/logos/logo.png" alt="" style="display: inherit;width: 500px;">
+            <div class="glassyDiv"
+                style="width:200px;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                <h2>Register Now</h2>
+            </div>
         </div>
-        <div class="displaynone child" id="1">
-            <div class="glassyDiv" style="width: 80vw;height: 80vh;"></div>
+        
+        <div class="displaynone child" id="1" style="width: 80vw;height:80vh;overflow: scroll;">
+            <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;" class="glassyDiv">
+                <div style="overflow: scroll;">
+                    <h1>ScienceEvents</h1>
+                    <div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;align-items: center;">
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                    </div>
+                    <h1>Culturals</h1>
+                    <div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;align-items: center;">
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                    </div>
+                    <h1>Popular</h1>
+                    <div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;align-items: center;">
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                    </div>
+                    <h1>Games</h1>
+                    <div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;align-items: center;">
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                        <div class="eventContainer glassyDiv" style="width: 200px;height:200px;">Event Name</div>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div class="displaynone child" id="2">
-            <h1 style="color: white;">div4</h1>
+            <div class="glassyDiv" style="width: 80vw;height: 80vh; overflow: scroll;">
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+            </div>
         </div>
+
         <div class="displaynone child" id="3">
-            <h1 style="color: white;">div5</h1>
-        </div>
-        <div class="displaynone child" id="4">
-            <h1 style="color: white;">div6</h1>
+            <div class="glassyDiv" style="width: 80vw;height: 80vh; overflow: scroll;">
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+                <p>cu uscuu sudcsdb ui sdiuc uisn jndc j  inc c bjnzbch bxhc </p><br>
+            </div>
         </div>
 
     </div>
-    <div style="display: block;position: absolute;bottom: 0;height: 10vh;z-index: 10;width: 100vw;" class="glassyDiv">
-        <div></div>
+    <div
+        style="display: flex;flex-direction:column;align-items: center;justify-content: center;position: absolute;bottom: 0px;height: 8vh;z-index: 10;width: 100vw;">
+        <div style="padding: 10px;width: 100vw;height: 80vh;border-radius: 20px; display: flex;flex-direction: row;justify-content: space-evenly;align-items: center;"
+            class="glassyDiv">
+            <div>
+                <img src="/frontend/assests/icons/Group 157.png" style="width: 60px;" alt="">
+            </div>
+            <div>
+                <img src="/frontend/assests/icons/Group 156.png" style="width: 60px;" alt="">
+            </div>
+            <div>
+                <img src="/frontend/assests/icons/Group 158.png" style="width: 60px;" alt="">
+            </div>
+            <div>
+                <img src="/frontend/assests/icons/Group 159.png" style="width: 80px;" alt="">
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>

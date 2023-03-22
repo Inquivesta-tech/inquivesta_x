@@ -10,20 +10,9 @@ const cookieParser = require('cookie-parser');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
-// const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
-// const reviewRouter = require('./routes/reviewRoutes');
-// const bookingRouter = require('./routes/bookingRoutes');
-// const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
-
-// app.set('view engine', 'pug');
-// app.set('views', path.join(__dirname, 'views'));
-
-// // 1) GLOBAL MIDDLEWARES
-// // Serving static files
-// app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
 app.use(helmet());
@@ -52,19 +41,13 @@ app.use(mongoSanitize());
 // Data sanitization against XSS
 app.use(xss());
 
-// // Prevent parameter pollution
-// app.use(
-//   hpp({
-//     whitelist: [
-//       'duration',
-//       'ratingsQuantity',
-//       'ratingsAverage',
-//       'maxGroupSize',
-//       'difficulty',
-//       'price'
-//     ]
-//   })
-// );
+// Prevent parameter pollution
+app.use(
+  hpp({
+    whitelist: [
+    ]
+  })
+);
 
 // Test middleware
 app.use((req, res, next) => {
@@ -73,17 +56,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// // 3) ROUTES
-// app.use('/', viewRouter);
-// app.use('/api/v1/tours', tourRouter);
-// app.use('/api/v1/users', userRouter);
-// app.use('/api/v1/reviews', reviewRouter);
-// app.use('/api/v1/bookings', bookingRouter);
+// 3) ROUTES
+app.use('/api/v1/users', userRouter);
 
-// app.all('*', (req, res, next) => {
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 module.exports = app;

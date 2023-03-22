@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auth</title>
+
+    <style>
+        /**
+ * Fonts
+ */
+
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        /**
+ * Reset
+ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            padding: 0;
+            margin: 0;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            padding: 0;
+            margin: 0;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #e5e5e5;
+            color: #1a1a1a;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p,
+        ol,
+        ul,
+        li,
+        dl,
+        dt,
+        dd,
+        blockquote,
+        figure,
+        fieldset,
+        form,
+        legend,
+        textarea,
+        pre,
+        iframe,
+        hr,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 0;
+            margin: 0;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /**
+ * Global Rules
+ */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #0d0d0d;
+            font-family: Roboto, sans-serif;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 35px;
+        }
+
+        a,
+        a:visited {
+            background-color: transparent;
+            color: #0067b8;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        a:hover,
+        a:active {
+            border-bottom: none;
+            outline: 0;
+        }
+
+        a:focus {
+            border-bottom: none;
+            outline: thin dotted;
+        }
+
+        a img {
+            border: 0;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        footer .credits {
+            font-size: 1rem;
+        }
+
+        /**
+ * Tabs Container
+ */
+        .tabs-container {
+            padding: 2rem;
+        }
+
+        /**
+ * Tabs Block
+ */
+        .tabs-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /**
+ * Tabs
+ */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .tabs label {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            margin-right: 0.0625rem;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            font-family: Roboto, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: background-color ease 0.3s;
+        }
+
+        .tabs label .material-icons {
+            margin-right: 0.3rem;
+        }
+
+        .tabs .tab {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 1rem 2rem;
+            color: #000;
+            background-color: #fff;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .tabs .tab>*:not(:last-child) {
+            margin-bottom: 0.8rem;
+        }
+
+        .tabs [type=radio] {
+            display: none;
+        }
+
+        .tabs [type=radio]:checked+label {
+            background-color: #fff;
+            color: #0067b8;
+            border-top: 4px solid #0067b8;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .tabs [type=radio]:checked+label+.tab {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+
+            body {
+                font-size: 1.125rem;
+            }
+
+            .tabs-container {
+                padding: 4rem 4rem;
+            }
+
+            .tabs label {
+                order: 1;
+                width: auto;
+            }
+
+            .tabs .tab {
+                order: 9;
+            }
+
+            .tabs [type=radio]:checked+label {
+                border-bottom: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            .tabs {
+                width: 800px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="display: flex;flex-direction: row;height: 100vh;align-items: center;justify-content: center;">
+        <div style="display: flex;width: 50vw;">
+            <div class="site-wrapper">
+                <section class="tabs-wrapper">
+                    <div class="tabs-container">
+                        <div class="tabs-block">
+                            <div class="tabs">
+                                <input type="radio" name="tabs" id="tab1" checked="checked" />
+                                <label for="tab1">Current</label>
+                                <div class="tab" id="Current">
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="radio" name="tabs" id="tab2" />
+                                <label for="tab2">Approved</label>
+                                <div class="tab">
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name2
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="radio" name="tabs" id="tab3" />
+                                <label for="tab3">Declined</label>
+                                <div class="tab">
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name3
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="radio" name="tabs" id="tab4" />
+                                <label for="tab4">On Hold</label>
+                                <div class="tab">
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name4
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="radio" name="tabs" id="tab5" />
+                                <label for="tab5">All</label>
+                                <div class="tab">
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name5
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: space-around;width: 100%;flex-direction: row;margin-bottom: 20px;" id="transactionId">
+                                        <div style="width:25%;">
+                                            <b>Name</b>: name
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Amount</b>: 500
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>UTR</b>: UTR8937237492342
+                                        </div>
+                                        <div style="width:25%;">
+                                            <b>Remark</b>: demn!
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div style="display: flex;width: 50vw;padding: 3vw;" class="tabs">
+            <div style="display: flex;flex-direction: column;justify-content: space-around;width: 100%;height: 80vh;padding-top: 30px;" class="tab">
+                <div>
+                    <div>
+                        <h1><b>Name:</b> Nigga1</h1>
+                    </div>
+                    <br>
+                    <div>
+                        <h1><b>Transaction Id:</b> id4893r7y4r7rh7wehr</h1>
+                    </div>
+                    <br>
+
+                    <div>
+                        <h1><b>Amount:</b> 500</h1>
+                    </div>
+                    <br>
+    
+                    <div>
+                        <h1><b>UTR:</b> UTR2374824234836423</h1>
+                    </div>
+                    <br>
+    
+                    <div>
+                        <h1><b>Remark:</b> Yo nigga!</h1>
+                    </div>
+                    <br>
+                </div>
+
+                <div style="display: flex;flex-direction: row;justify-content: space-around;align-items: center;width: 100%;">
+                    <button style="width: 25%;border: 0;background-color: skyblue;height: 40px;border-radius: 5px;margin: 4px;">Pending</button>
+                    <button style="width: 25%;border: 0;background-color: skyblue;height: 40px;border-radius: 5px;margin: 4px;">Approved</button>
+                    <button style="width: 25%;border: 0;background-color: skyblue;height: 40px;border-radius: 5px;margin: 4px;">Declined</button>
+                    <button style="width: 25%;border: 0;background-color: skyblue;height: 40px;border-radius: 5px;margin: 4px;">On Hold</button>
+                </div>
+                
+                <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;width: 100%;">
+                    <button style="width: 50%;border: 0;background-color: lightgreen;height: 40px;border-radius: 5px;margin: 4px;">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
