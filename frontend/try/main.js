@@ -181,6 +181,8 @@ function switchDivTo(Id) {
     outId = inId
     inId = Id
     divSwitcher(inId, outId)
+    document.getElementById(inId+"nav").classList.add("active")
+    document.getElementById(outId+"nav").classList.remove("active")
   }
 }
 
