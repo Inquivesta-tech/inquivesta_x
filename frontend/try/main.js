@@ -14,6 +14,22 @@ var hyperspeed_upscale = 1.03;
 var hyperspeed_downscale = 1.3;
 var current_scale = 0.1;
 
+// select the website theme
+
+let theme = "fire"
+// let theme = "simple"
+
+let k
+function toggleTheme() {
+  console.log("toggled");
+  if (theme === "simple") {
+    theme = "fire"
+  } else {
+    theme = "simple"
+  }
+  init()
+}
+
 init();
 animate();
 
@@ -30,19 +46,33 @@ function init() {
   camera.lookAt(scene.position);
   scene.add(camera);
 
-  var light = new THREE.DirectionalLight(0xDBF227, 0.5);
+  let fire = [0xDBF227,0xF37203,0xF01706,0xA60600]
+  let simple = [0xF000DB,0x0BC4CF,0x133DC9,0x621882]
+  let colors
+
+  console.log(theme);
+
+  if (theme === "fire") {
+    colors = fire
+    document.getElementById('logo').src = "/frontend/assests/logos/pheonixLogo.png"
+  } else {
+    colors = simple
+    document.getElementById('logo').src = "/frontend/assests/logos/logo.png"
+  }
+
+  var light = new THREE.DirectionalLight(colors[0], 0.5);
   light.position.set(1, 1, 0).normalize();
   scene.add(light);
 
-  var light = new THREE.DirectionalLight(0xF37203, 0.5);
+  var light = new THREE.DirectionalLight(colors[1], 0.5);
   light.position.set(-1, 1, 0).normalize();
   scene.add(light);
 
-  var light = new THREE.PointLight(0xF01706, 10, 25);
+  var light = new THREE.PointLight(colors[2], 10, 25);
   light.position.set(0, -3, 0);
   scene.add(light);
 
-  var light = new THREE.PointLight(0xA60600, 15, 30);
+  var light = new THREE.PointLight(colors[3], 15, 30);
   light.position.set(3, 3, 0);
   scene.add(light);
 
