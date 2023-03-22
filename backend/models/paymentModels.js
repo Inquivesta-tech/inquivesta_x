@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-
-const verificationStatus = {
-    Verified : "Verified",
-    TransactionFailed : "Failed",
-    VerificationInProcess : "InProcess"
-}
+const verificationStatus = require("../utils/constants");
 
 /* The Transaction ID is a map type which takes in  */
 const paymentDetails = new mongoose.Schema(
@@ -13,23 +8,17 @@ const paymentDetails = new mongoose.Schema(
         userName : {
             type: String,
         },
-        purchasedItems : [],
-        utr : {type : int},
-        verified : {type: verificationStatus},
+        userId : {
+            type : mongoose.Types.ObjectId,
+            ref : 'Profile',
+        },
+        purchasedEvents : [String],
+        purchasedAmount : Number,
+        utr : {type : Number},
+        verified : {type: "String"},
     }
 )
 
-const paymentSchema = new mongoose.Schema(
-    {
-        name : {
-            type: String,
-        },
-        transactionID: {
-            type : String,
-        },
-    }
-)
-
-const Payments = mongoose.model("Payments", paymentSchema);
+const Payments = mongoose.model("Payments", paymentDetails);
 
 modules.export = Payments;
