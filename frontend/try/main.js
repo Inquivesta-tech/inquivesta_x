@@ -30,19 +30,19 @@ function init() {
   camera.lookAt(scene.position);
   scene.add(camera);
 
-  var light = new THREE.DirectionalLight(0xF000DB, 0.5);
+  var light = new THREE.DirectionalLight(0xDBF227, 0.5);
   light.position.set(1, 1, 0).normalize();
   scene.add(light);
 
-  var light = new THREE.DirectionalLight(0x0BC4CF, 0.5);
+  var light = new THREE.DirectionalLight(0xF37203, 0.5);
   light.position.set(-1, 1, 0).normalize();
   scene.add(light);
 
-  var light = new THREE.PointLight(0x133DC9, 10, 25);
+  var light = new THREE.PointLight(0xF01706, 10, 25);
   light.position.set(0, -3, 0);
   scene.add(light);
 
-  var light = new THREE.PointLight(0x621882, 15, 30);
+  var light = new THREE.PointLight(0xA60600, 15, 30);
   light.position.set(3, 3, 0);
   scene.add(light);
 
