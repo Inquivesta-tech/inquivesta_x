@@ -19,7 +19,6 @@ var current_scale = 0.1;
 let theme = "fire"
 // let theme = "simple"
 
-let k
 function toggleTheme() {
   console.log("toggled");
   if (theme === "simple") {
@@ -54,10 +53,10 @@ function init() {
 
   if (theme === "fire") {
     colors = fire
-    document.getElementById('logo').src = "/frontend/assests/logos/pheonixLogo.png"
+    document.getElementById('logo').src = "/assests/logos/pheonixLogo.png"
   } else {
     colors = simple
-    document.getElementById('logo').src = "/frontend/assests/logos/logo.png"
+    document.getElementById('logo').src = "/assests/logos/logo.png"
   }
 
   var light = new THREE.DirectionalLight(colors[0], 0.5);

@@ -60,7 +60,7 @@ div {
 
 .zoom1 {
 	animation-name: initialZoomEffect;
-	animation-duration: 0.05s;
+	animation-duration: 0.09s;
 	transform: perspective(500px) translateZ(0px);
 }
 
@@ -111,7 +111,7 @@ div {
 
 	.zoom1 {
 		animation-name: initialZoomEffect;
-		animation-duration: 0.05s;
+		animation-duration: 0.09s;
 		transform: perspective(500px) translateZ(0px);
 	}
 
