@@ -236,6 +236,7 @@ div {
 	color: white;
 	padding: 10px;
 	margin-bottom: 20px;
+	border-radius: 20px;
 }
 
 #navbar>.glassyDiv {
@@ -264,6 +265,35 @@ div {
 	justify-content: center;
 }
 
+/* FAQ */
+.faqContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10vh;
+	width: 80%;
+	height: 70vh;
+	overflow: auto;
+	padding: 20px;
+}
+
+
+/* EVENT Information */
+.eventInformation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10vh;
+	width: 80%;
+	height: 70vh;
+	overflow: auto;
+	padding: 20px;
+	overflow: auto;	
+}
+
+
 @media screen and (min-width:700px) {
 
 	/* NAVBAR Stuff */
@@ -285,12 +315,34 @@ div {
 		border-radius: 8vh;
 	}
 
-	/* EVENTS Stuff */
 	.registerBtn {
 		width: 10vw;
 		margin-top: 40px;
 		border-radius: 20px;
 	}
+
+	/* EVENTS Stuff */
+	.eventIconContainer {
+		width: 15vw;
+		height: 15vw;
+		padding: 10px;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.eventInformation {
+		width : 40vw;
+	}
+
+	/* FAQ Stuff */
+	.faqContainer {
+		width: 50vw;
+	}
+
+
+
 
 
 }

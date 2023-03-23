@@ -6,3 +6,7 @@ function zoomearth() {
         },900
     )
 }
+
+function displayEvent() {
+    
+}
