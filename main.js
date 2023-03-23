@@ -14,8 +14,7 @@ var hyperspeed_upscale = 1.03;
 var hyperspeed_downscale = 1.3;
 var current_scale = 0.1;
 
-// select the website theme
-
+// select the initial website theme
 let theme = "fire"
 // let theme = "simple"
 

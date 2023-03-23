@@ -226,3 +226,14 @@ div {
 .inquicon{
 	z-index: 100;
 }
+
+.registerButton{
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	background-color: Transparent;
+	color: white;
+	padding: 10px;
+	margin-bottom: 20px;
+}
