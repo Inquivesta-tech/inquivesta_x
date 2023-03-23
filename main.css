@@ -239,6 +239,10 @@ div {
 	border-radius: 20px;
 }
 
+.registerButton:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
 #navbar>.glassyDiv {
 	border-radius: 10px;
 	position: relative;
