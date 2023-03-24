@@ -44,8 +44,8 @@ function init() {
   camera.lookAt(scene.position);
   scene.add(camera);
 
-  let fire = [0xDBF227,0xF37203,0xF01706,0xA60600]
-  let simple = [0xF000DB,0x0BC4CF,0x133DC9,0x621882]
+  let fire = [0xDBF227, 0xF37203, 0xF01706, 0xA60600]
+  let simple = [0xF000DB, 0x0BC4CF, 0x133DC9, 0x621882]
   let colors
 
   console.log(theme);
@@ -107,13 +107,13 @@ function onKeyDown(event) {
 }
 
 function onClick(event) {
-  console.log("click");
+  // console.log("click");
   hyperspeed_mode = true;
-  console.log(cylinder);
+  // console.log(cylinder);
 }
 
 function onRelease(event) {
-  console.log("release");
+  // console.log("release");
   hyperspeed_mode = false;
 }
 
@@ -206,11 +206,20 @@ function divSwitcher(inId, outId) {
 
 function switchDivTo(Id) {
   if (inId != Id) {
+
+    if (inId != 1) {
+      document.getElementById("1nav").classList.remove("active")
+    }
+
     outId = inId
     inId = Id
     divSwitcher(inId, outId)
-    document.getElementById(inId+"nav").classList.add("active")
-    document.getElementById(outId+"nav").classList.remove("active")
+    if (inId != 4 | outId != 1) {
+      document.getElementById(inId + "nav").classList.add("active")
+      if (outId != 4) {
+        document.getElementById(outId + "nav").classList.remove("active")
+      }
+    }
   }
 }
 
@@ -226,3 +235,127 @@ function switchDivTo(Id) {
 //   console.log(inId, outId);
 //   divSwitcher(String(inId),String(outId))
 // }
+
+let data
+let scienceEvents, headlineEvents, culturalEvents
+
+var importdata = $.getJSON("./assests/data.json", function () {
+  data = importdata.responseJSON
+  initializeEventsPg(data)
+})
+
+function initializeEventsPg(data) {
+
+  // categorize data
+  let scienceEvents = data.filter((item) => item["Category"] === "Science Events");
+  let headlineEvents = data.filter((item) => item["Category"] === "Headlines Events");
+  let culturalEvents = data.filter((item) => item["Category"] === "Culturals");
+
+  // create events page
+  scienceEvents.forEach(element => {
+    document.getElementById("ScienceEvents").innerHTML += `<div class="eventIconContainer glassyDiv" onclick="openEvent('${element["Event Name"]}')" >${element["Event Name"]}</div>`
+  });
+  headlineEvents.forEach(element => {
+    document.getElementById("Popular").innerHTML += `<div class="eventIconContainer glassyDiv" onclick="openEvent('${element["Event Name"]}')" >${element["Event Name"]}</div>`
+  });
+  culturalEvents.forEach(element => {
+    document.getElementById("Culturals").innerHTML += `<div class="eventIconContainer glassyDiv" onclick="openEvent('${element["Event Name"]}')" >${element["Event Name"]}</div>`
+  });
+}
+
+// events page navigation
+function openEvent(eventname) {
+  let event = data.filter((item) => item["Event Name"] === eventname);
+  makeEventPage(event[0]);
+  switchDivTo('4')
+}
+
+function makeEventPage(data) {
+  console.log(data["Event Name"]);
+
+  document.getElementById('4').innerHTML = `
+    <div class="glassyDiv glassyEventContainer">
+
+      <div style="overflow: scroll;margin-bottom: 10vh;">
+          <h1 style="width: 100%;text-align: center;">${data["Event Name"]}</h1>
+          <div style="height: max-content;scroll-behavior: smooth;">
+              <div>
+                  <h2>About</h2>
+                  <p>
+                    ${data["Description"]}
+                  </p>
+              </div>
+              <div>
+                  <h2>Rules</h2>
+                  <p>
+                    ${data["Rules and Regulations"]}
+                  </p>
+              </div>
+              <div>
+                  <h2>Schedule</h2>
+                  <h3>
+                      Date : ${data["Date"]}
+                  </h3>
+                  <h3>
+                      Time : ${data["Time"]}
+                  </h3>
+                  <h3>
+                      Venue : ${data["Location"]}
+                  </h3>
+              </div>
+              <div>
+                  <h2>Prizes</h2>
+                  <p>
+                    ${data["Prizes"]}
+                  </p>
+              </div>
+              <div>
+                  <h2>Registration Closes</h2>
+                  <p>
+                    ${data["Registration Deadline"]}
+                  </p>
+              </div>
+              <div>
+                  <h2>Contact Event Organizers</h2>
+                  <p>
+                    ${data["Contact Details"]}
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <div style=" position: absolute;bottom: 10vh;display: flex;flex-direction: row;">
+          <button id="addButton" class="glassyDiv registerButton" style="width:120px;"
+              onclick="switchDivTo('1')">
+              <h3>back</h3>
+          </button>
+          <div style="width:40px;"></div>
+          <a href="${data["Registration"]}" target="_blank" rel="noopener noreferrer">
+            <button id="addButton" class="glassyDiv registerButton" style="width:120px;">
+                <h3>Register</h3>
+            </button>
+          </a>
+      </div>
+
+  </div>
+  `
+}
+
+setTimeout(() => {
+  // switchDivTo('3')
+}, 1200);
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}

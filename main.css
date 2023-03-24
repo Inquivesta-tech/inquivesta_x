@@ -271,6 +271,9 @@ div {
 
 /* FAQ */
 .faqContainer {
+}
+
+.glassyEventContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -344,9 +347,5 @@ div {
 	.faqContainer {
 		width: 50vw;
 	}
-
-
-
-
 
 }
