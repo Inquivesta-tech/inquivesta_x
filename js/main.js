@@ -7,6 +7,6 @@ function zoomearth() {
     )
 }
 
-function displayEvent() {
+function displayEventContainer(eventName) {
     
 }
