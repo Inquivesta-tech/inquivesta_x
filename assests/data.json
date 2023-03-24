@@ -1,9 +1,9 @@
 [
   {
     "Category": "Science Events",
-    "Event Name": "Ailment Act",
+    "Event Name": "AILMENT ACT",
     "Description": "",
-    "Rules and Regulations": "General rules of the event: Round 1 – 10 Diseases will be shown through projector in pictorial form. Each team will consist of two people. All questions are compulsory. Round 2 – Teams who qualify the first round will get to enact the diseases they are told. (In a dumb charades format).",
+    "Rules and Regulations": "The event wil have 2 rounds. Round 1: 10 Diseases will be shown through projector in pictorial form. Each team will consist of two people. All questions are compulsory. Round 2: Teams who qualify the first round will get to enact the diseases they are told. (In a dumb charades format).",
     "Date": "1st April",
     "Time": "11am - 3pm",
     "Location": "LHC",
@@ -16,9 +16,9 @@
   },
   {
     "Category": "Science Events",
-    "Event Name": "Critter Hunt",
+    "Event Name": "CRITTER HUNT",
     "Description": "It can't get any higher resolution than this. Join us in The Critter Hunt, where you look out to search for the most unique specimen to examine under a microscope.",
-    "Rules and Regulations": "",
+    "Rules and Regulations": "Find and mount interesting micro/macroscopic invertebrates and get points based on your ability to grab creepy crawlies",
     "Date": "1st April, 2nd April",
     "Time": "11am -",
     "Location": "LHC",
@@ -31,7 +31,7 @@
   },
   {
     "Category": "Science Events",
-    "Event Name": "Paradigm",
+    "Event Name": "PARADIGM",
     "Description": "An event aimed towards school students from underprivileged backgrounds, that encourages them to create science models and present them as exhibition.",
     "Rules and Regulations": "",
     "Date": "2nd April",
@@ -41,12 +41,12 @@
     "Registration fee": "free",
     "Registration": "Open to All",
     "onspot": 1,
-    "Registration Deadline": "TBD",
+    "Registration Deadline": "31st March 2023  12:00 AM IST",
     "Contact Details": ""
   },
   {
     "Category": "Science Events",
-    "Event Name": "Thrust",
+    "Event Name": "THRUST",
     "Description": "Ever felt like breaking from the binding pull of gravity? This is your chance... All you need is creativity and a bit of H2O. Thrust is Inquivesta's very own rocket assembly line, where participants get to make their own water-powered rockets, and compete against each other to craft the ultimate flying machine.",
     "Rules and Regulations": "For Newbies:\nAttend a fun workshop on Building Water Rockets with us on Saturday (2pm) and we will teach you how to build your very own flying spectacle. Finished Rockets will be launched in the evening, competing against eachother to see who goes the farthest.\n\nFor the Experienced:\nGet your own Water Rocket to showcase in the competition. Rockets will be judged on how much range they can cover. There will be a special prize for the most elegant design. You can either bring your own launcher or use the one we provide to you.",
     "Date": "1st April",
@@ -57,7 +57,7 @@
     "Registration": "https://unstop.com/o/3JfVr9h?lb=Otz3Q9l",
     "onspot": 0,
     "Registration Deadline": "31st March 2023  12:00 AM IST",
-    "Contact Details": "ARITRA BARUA : 9163120930 GARGI PATIL : 8484870355 Thrust.inquivestaX@gmail.com"
+    "Contact Details": "ARITRA BARUA : 9163120930\n GARGI PATIL : 8484870355\n Thrust.inquivestaX@gmail.com"
   },
   {
     "Category": "Science Events",
@@ -76,7 +76,7 @@
   },
   {
     "Category": "Science Events",
-    "Event Name": "NutJob",
+    "Event Name": "NUTJOB",
     "Description": "Get ready to put your creativity to test as you are challenged to do even the simplest of the tasks with ingenious mechanisms constructed out of scrap. So get ready to do some \"jugaad\" and take part in The NutJob.",
     "Rules and Regulations": "",
     "Date": "1st April",
@@ -91,7 +91,7 @@
   },
   {
     "Category": "Science Events",
-    "Event Name": "Rationale",
+    "Event Name": "RATIONALE",
     "Description": "One of Inquivesta's trademark scientific debate competiition. Science and Technology are all about the truth, as well as the rightfull application of the truth for some benefit. However in today's complicated world, various concepts and opinions exist about ethics itsels. Join the ultimate Debate and establish your truth! Of course, rationale-y!",
     "Rules and Regulations": "",
     "Date": "1st April",
@@ -106,7 +106,7 @@
   },
   {
     "Category": "Science Events",
-    "Event Name": "Fauxpert",
+    "Event Name": "FAUXPERT",
     "Description": "Unleash your inner scientist and showcase your genius at Fauxpert - where creativity meets knowledge!",
     "Rules and Regulations": "",
     "Date": "2nd April",
@@ -151,7 +151,7 @@
   },
   {
     "Category": "Headlines Events",
-    "Event Name": "Headshot",
+    "Event Name": "HEADSHOT",
     "Description": "From Ascent to Haven, Fracture to Pearl, We present to you the mega valorant tournament for all those gamers. A tournament with exciting prizes and lots of enjoyment with your felllow teammates and opponents.",
     "Rules and Regulations": "",
     "Date": "2nd April",
@@ -166,7 +166,7 @@
   },
   {
     "Category": "Headlines Events",
-    "Event Name": "Anicon",
+    "Event Name": "ANICON",
     "Description": "Do mind it that scientists with their endless curiosity can say \"omae wa mau shinderu\" to their research for a day and binge watch anime. So, why not show their love for characters of their favourite anime through cosplay?How about with the POWER OF FRIENDSHIP, they bring some unknown people from totally different tep into the world of anime and unleash your inner hero at Anicon - where imagination meets reality! Cosplay your heart out and join the ultimate celebration of all things animeprofessions and backgrounds, to an event where they all are bonded through a common link!!! For that only, INQUIVESTA-X brings you anicon 2.0!!!",
     "Rules and Regulations": "",
     "Date": "2nd April",
@@ -181,7 +181,7 @@
   },
   {
     "Category": "Headlines Events",
-    "Event Name": "Chess",
+    "Event Name": "CHESS",
     "Description": "It is what it is",
     "Rules and Regulations": "",
     "Date": "31st March, 1st April",
@@ -196,9 +196,9 @@
   },
   {
     "Category": "Culturals",
-    "Event Name": "Soulbeats",
+    "Event Name": "SOULBEATS",
     "Description": "An exciting dance competition where individuals/duos/groups have to showcase pre-rehearsed performances to get exciting prizes!",
-    "Rules and Regulations": "The dance performance should have a time limit of 2 minutes, not more than that.Register for the event through google form (given in mail).",
+    "Rules and Regulations": "The dance performance should have a time limit of 2 minutes, not more than that. There are no restricitons on the dance style. Register for the event through google form.",
     "Date": "1st April",
     "Time": "2:00 PM-7:00 PM",
     "Location": "RN Tagore auditorium",
@@ -207,11 +207,11 @@
     "Registration": "https://docs.google.com/forms/d/e/1FAIpQLSeXzYc9ZprrgDCrh9Y1dS-flTuS2beB9LmtYEUFIqK_49_F8w/viewform",
     "onspot": "",
     "Registration Deadline": "TBD",
-    "Contact Details": "Arkadeep Dey -9101653062"
+    "Contact Details": "Arkadeep Dey - 9101653062"
   },
   {
     "Category": "Culturals",
-    "Event Name": "Open Mic",
+    "Event Name": "OPEN MIC",
     "Description": "Just a fun event starting at mid night for relaxation, jokes and gossips.",
     "Rules and Regulations": "Event starts at midnight, Have fun, start performing in front of an open mic. Just don't be Political, immoral or immaturely vulgar. Don't target anyone and disturb the integrity of the event.",
     "Date": "31st March, 1st April, 2nd April",
@@ -222,13 +222,13 @@
     "Registration": "On the spot",
     "onspot": "",
     "Registration Deadline": "Till the last performer.",
-    "Contact Details": "Asish Kumar Patra- 8280690054"
+    "Contact Details": "Asish Kumar Patra - 8280690054"
   },
   {
     "Category": "Culturals",
-    "Event Name": "K- Pop",
+    "Event Name": "K-POP SEGYE",
     "Description": "For the growing number of K-Pop fans in India; Play the games that your favorite celebrities (idols) play!",
-    "Rules and Regulations": "Daebak Trivia Quiz (12:00 - 13:00): Compete with other fans in the given 30 seconds and answer as many questions as you can. Three rounds: Round 1 is a qualifier round, from where 10 of the players will advance to Round 2 and finally 5 of those will advance to Round 3. 2 out of 5 will win!                                    Shout in silence (14:00 - 15:00): Two players should work as a team, they will desperately try to communicate while listening to loud K-Pop through headphones. Those who manage to communicate atleast 5 of the given messages in 2 minutes will win!        K-Bop or K-Flop (16:00 - 17:00): The game involves the player suggesting a K-pop song to non-K-Pop fans who will act as judges and rate the song that was suggested to them. Those suggesting songs that garner highest ratings from the judges are entitled to amazing prizes!",
+    "Rules and Regulations": "Daebak Trivia Quiz (12:00 - 13:00): Compete with other fans in the given 30 seconds and answer as many questions as you can. Three rounds: Round 1 is a qualifier round, from where 10 of the players will advance to Round 2 and finally 5 of those will advance to Round 3. 2 out of 5 will win! Shout in silence (14:00 - 15:00): Two players should work as a team, they will desperately try to communicate while listening to loud K-Pop through headphones. Those who manage to communicate atleast 5 of the given messages in 2 minutes will win!        K-Bop or K-Flop (16:00 - 17:00): The game involves the player suggesting a K-pop song to non-K-Pop fans who will act as judges and rate the song that was suggested to them. Those suggesting songs that garner highest ratings from the judges are entitled to amazing prizes!",
     "Date": "1st April",
     "Time": "12 noon - 5pm",
     "Location": "LHC 103",
@@ -241,18 +241,18 @@
   },
   {
     "Category": "Culturals",
-    "Event Name": "Karaoke",
+    "Event Name": "KARAOKE",
     "Description": "Musical event where a single performer can perform with a karaoke or backing instrument.",
-    "Rules and Regulations": "Participations-  \nCompetition is to be held on 2nd\nApril 6-8PM\nParticipants have to register in the\nregistration desk in the event itself in order to participate.  \nEntry fee is 50/-  (As we have to distribute prizes from the same)\nParticipants are requested to keep\ntheir karaoke tracks ready and should be able to email or whatsapp to a given\ncontact as soon as possible.  \nThe time limit for each performance\nis 3 minutes.   \nAll genres of music are allowed.    \nParticipants would be performing in a\nfirst come first perform manner.\nCompetition-     \nThere will be 2 judges of the event\nwhose combined marks would be considered for the final result.\nThe Judges’ decision is final..      \nAs this is an informal fest event,\nparticipants are expected to not create an issue following the judgements.       \nThe winner and runners up will get\nspecial gifts.    \nParticipants would be judged on the\nbasis of rhythm, tune, diction and presentation.      \nAny participant disturbing the\nintegrity of the show would be disqualified.      \nOnly solo performances are allowed.      \nParticipants can use backing\ninstruments too.",
+    "Rules and Regulations": "Participants have to register at the registration desk in the event itself in order to participate.\nEntry fee is 50/-\nParticipants are requested to keep their karaoke tracks ready and should be able to email or whatsapp to a given contact as soon as possible.\nThe time limit for each performance is 3 minutes. All genres of music are allowed.\nParticipants would be performing in a\nfirst come first perform manner.\n\nCompetition-\nThere will be 2 judges of the event whose combined marks would be considered for the final result.\nThe Judges decision is final.. \nAs this is an informal fest event,\nparticipants are expected to not create an issue following the judgements. \nThe winner and runners up will get special gifts.\nParticipants would be judged on the basis of rhythm, tune, diction and presentation.\nAny participant disturbing the integrity of the show would be disqualified. \nOnly solo performances are allowed.Participants can use backing instruments too.",
     "Date": "2nd April",
     "Time": "6pm - 8pm",
     "Location": "LHC 107",
     "Prizes": "Depends on the entries",
     "Registration fee": "50/- per participants",
-    "Registration": "To be done on the spot. Entry fee is 50/-",
+    "Registration": "To be done on the spot.",
     "onspot": "",
     "Registration Deadline": "Till the competition ends.",
-    "Contact Details": "Asish Kumar Patra- 8280690054"
+    "Contact Details": "Asish Kumar Patra - 8280690054"
   },
   {
     "Category": "Culturals",
@@ -260,7 +260,7 @@
     "Description": "Coming",
     "Rules and Regulations": "Coming",
     "Date": "1st April",
-    "Time": "4 pm onwards(tentative)",
+    "Time": "4 pm onwards",
     "Location": "RN Tagore Auditorium or LHC 107",
     "Prizes": "",
     "Registration fee": "",
