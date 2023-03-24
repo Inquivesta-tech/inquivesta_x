@@ -1,6 +1,23 @@
 .glassyDiv{
     background: linear-gradient(179.75deg, rgba(217, 217, 217, 0.16) 0%, rgba(217, 217, 217, 0.16) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
 	border-radius: 10px;
 }
+
+
+.accordion {
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    overflow: hidden;
+  }
