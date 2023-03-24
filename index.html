@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./fly.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <!-- <script src="./assests/data.json" type="text/javascript"></script> -->
+
     <style>
         canvas {
             position: absolute;
@@ -22,7 +26,7 @@
 </head>
 
 <body style="height: 100vh;">
-    <!-- <div id="earthContainer" style="height:100vh;width: 100vw;overflow: hidden;display: flex;align-items: center;flex-direction: column;justify-content:flex-start;position: absolute;z-index: 2;">
+    <!-- <div id="earthContainer" style="height:100vh;width: 100vw;overflow: hidden;display: flex;align-items: center;flex-direction: column;justify-content:flex-start;position: absolute;z-index: 1000;">
         <img src="/assests/images/Earth.png" id="earth" class="initialEarth" alt="" >
         <div class="stage" id="butterfly" onclick="zoomearth()">
             <div class="mariposa">
@@ -46,6 +50,7 @@
                 style="width:40vw;display: flex;flex-direction: column;align-items: center;justify-content: center;"
                 ontouchstart="switchDivTo('1')">
                 <h3>Register Now</h3>
+
             </div>
         </div>
 
@@ -53,54 +58,26 @@
             <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin-bottom: 10vh;"
                 class="">
                 <div style="overflow: auto;">
+
                     <h1 style="margin-left: 20px;">ScienceEvents</h1>
                     <div class="eventIconContainerContainer" id="ScienceEvents">
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
+
                     </div>
-                    <h1 style="margin-left: 20px;">Culturals</h1>
-                    <div class="eventIconContainerContainer" id="Culturals">
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                    </div>
+
                     <h1 style="margin-left: 20px;">Popular</h1>
                     <div class="eventIconContainerContainer" id="Popular">
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
+
                     </div>
-                    <h1 style="margin-left: 20px;">Games</h1>
+
+                    <h1 style="margin-left: 20px;">Culturals</h1>
+                    <div class="eventIconContainerContainer" id="Culturals">
+
+                    </div>
+
+                    <!-- <h1 style="margin-left: 20px;">Games</h1>
                     <div class="eventIconContainerContainer" id="Games">
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                        <div class="eventIconContainer glassyDiv" onclick="switchDivTo('4')" >Event Name</div>
-                    </div>
+
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -171,66 +148,71 @@
 
 
         <div class="displaynone child" id="4">
-            <div class="glassyDiv"
-                style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin-bottom: 10vh;width: 80%;height: 70vh;overflow: auto;padding:20px;overflow: auto;">
+            <div class="glassyDiv glassyEventContainer">
 
-                <div style="overflow: auto;margin-bottom: 10vh;height: 60vh;">
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
-                    <p>cu uscuu sudcsdb ui sdiuc uisn jndc j inc c bjnzbch bxhc </p><br>
+                <div style="overflow: scroll;margin-bottom: 10vh;">
+                    <h1 style="width: 100%;text-align: center;">Event Name</h1>
+                    <div style="height: max-content;scroll-behavior: smooth;">
+                        <div>
+                            <h2>About</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, temporibus consequuntur qui recusandae sequi dolorem maiores, incidunt provident obcaecati minus cum minima atque veritatis a odit, consectetur tempora. Voluptatem ea facere eaque sequi est placeat illo cumque nulla eveniet officiis hic voluptates, eius corporis accusantium rem dolor itaque nesciunt! Quis minus aspernatur cum enim, iure blanditiis, architecto tempora eaque, incidunt similique quod facilis! Pariatur aut facere inventore velit sapiente autem perspiciatis aliquid soluta praesentium provident et, incidunt deserunt. Quos explicabo, ullam ipsa praesentium sunt sed earum dolorum maxime. Nemo, sapiente. Odio necessitatibus repellendus, ducimus impedit, nemo natus reprehenderit nam id, assumenda quis voluptates consequuntur magni aut cum unde vel est minus veniam libero voluptate tempora laborum cumque? Hic eos repudiandae voluptas saepe asperiores? Veniam quibusdam accusantium beatae ad harum dolorum commodi, rem perferendis perspiciatis. In animi ex recusandae corrupti magni perspiciatis itaque? Incidunt odit beatae id quis consequatur tempora ducimus aut, corrupti quisquam ipsam soluta, sequi rerum ipsum! Tempora quo blanditiis rerum suscipit officia qui harum et iure sunt maxime cum earum, voluptatem at possimus minus voluptate hic odio cumque quam modi? Molestiae, maiores. Neque, alias? Est sapiente nostrum enim minus veniam reprehenderit totam unde omnis nam, accusamus itaque eum qui et ducimus laborum aperiam dicta voluptatibus quibusdam dolorum modi vero incidunt ab expedita! Aut porro, illo fugit minima quam perferendis quos laborum eius ad, corrupti earum sint facere voluptate omnis sit eveniet tempora dolorem. Sunt accusantium asperiores voluptatibus. Iusto quibusdam assumenda ducimus harum, sunt, numquam cum esse enim ratione at facilis officia saepe libero dolores sit debitis suscipit quos a eius illum aliquam iste! Sunt voluptatum, voluptates animi quis aut modi beatae unde, repellat ipsam hic eaque. Corrupti magni rerum optio eos amet autem dolores, facilis et illo? Nobis iure natus quis ab veritatis totam eum rem corrupti labore!
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Rules</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, temporibus consequuntur qui recusandae sequi dolorem maiores, incidunt provident obcaecati minus cum minima atque veritatis a odit, consectetur tempora. Voluptatem ea facere eaque sequi est placeat illo cumque nulla eveniet officiis hic voluptates, eius corporis accusantium rem dolor itaque nesciunt! Quis minus aspernatur cum enim, iure blanditiis, architecto tempora eaque, incidunt similique quod facilis! Pariatur aut facere inventore velit sapiente autem perspiciatis aliquid soluta praesentium provident et, incidunt deserunt. Quos explicabo, ullam ipsa praesentium sunt sed earum dolorum maxime. Nemo, sapiente. Odio necessitatibus repellendus, ducimus impedit, nemo natus reprehenderit nam id, assumenda quis voluptates consequuntur magni aut cum unde vel est minus veniam libero voluptate tempora laborum cumque? Hic eos repudiandae voluptas saepe asperiores? Veniam quibusdam accusantium beatae ad harum dolorum commodi, rem perferendis perspiciatis. In animi ex recusandae corrupti magni perspiciatis itaque? Incidunt odit beatae id quis consequatur tempora ducimus aut, corrupti quisquam ipsam soluta, sequi rerum ipsum! Tempora quo blanditiis rerum suscipit officia qui harum et iure sunt maxime cum earum, voluptatem at possimus minus voluptate hic odio cumque quam modi? Molestiae, maiores. Neque, alias? Est sapiente nostrum enim minus veniam reprehenderit totam unde omnis nam, accusamus itaque eum qui et ducimus laborum aperiam dicta voluptatibus quibusdam dolorum modi vero incidunt ab expedita! Aut porro, illo fugit minima quam perferendis quos laborum eius ad, corrupti earum sint facere voluptate omnis sit eveniet tempora dolorem. Sunt accusantium asperiores voluptatibus. Iusto quibusdam assumenda ducimus harum, sunt, numquam cum esse enim ratione at facilis officia saepe libero dolores sit debitis suscipit quos a eius illum aliquam iste! Sunt voluptatum, voluptates animi quis aut modi beatae unde, repellat ipsam hic eaque. Corrupti magni rerum optio eos amet autem dolores, facilis et illo? Nobis iure natus quis ab veritatis totam eum rem corrupti labore!
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Schedule</h2>
+                            <h3>
+                                Date : 1-04-2023
+                            </h3>
+                            <h3>
+                                Time : 1:00 PM - 5:00 PM
+                            </h3>
+                            <h3>
+                                Venue : M.N. Saha Auditorium
+                            </h3>
+                        </div>
+                        <div>
+                            <h2>Prizes</h2>
+                            <p>
+                                Prizes worth ₹5000
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Registration Closes</h2>
+                            <p>
+                                30-03-2023
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Contact Event Organizers</h2>
+                            <p>
+                                ARITRA BARUA : 9163120930 
+                                <br>
+                                GARGI PATIL : 8484870355 
+                                <br>
+                                Thrust.inquivestaX@gmail.com
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="position: absolute;bottom: 10vh;display: flex;flex-direction: row;">
-                    <button id="addButton" class="glassyDiv registerButton" style="width:120px;" onclick="switchDivTo('1')">
+                <div style=" position: absolute;bottom: 10vh;display: flex;flex-direction: row;">
+                    <button id="addButton" class="glassyDiv registerButton" style="width:120px;"
+                        onclick="switchDivTo('1')">
                         <h3>back</h3>
                     </button>
                     <div style="width:40px;"></div>
+                    <a href="https://inquivesta.in/" target="_blank" rel="noopener noreferrer">
                     <button id="addButton" class="glassyDiv registerButton" style="width:120px;">
                         <h3>Register</h3>
                     </button>
+                    </a>
                 </div>
 
             </div>
