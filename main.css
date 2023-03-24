@@ -2,6 +2,9 @@ body {
 	margin: 0px;
 	padding: 0px;
 	color: white;
+	/* font-family: 'Poppins', sans-serif; */
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
 }
 
 canvas {
@@ -14,6 +17,10 @@ div {
 	overflow: hidden;
 	margin: 0px;
 	padding: 0px;
+}
+
+a {
+	text-decoration: none;
 }
 
 /* canvas {
@@ -203,9 +210,12 @@ div {
 	justify-content: center;
 	position: absolute;
 	bottom: 0;
-	height: 8vh;
+	height: 10vh;
 	z-index: 10;
 	width: 100vw;
+	position: absolute;
+	/* top: 100%; */
+	/* transform: translateY(100%); */
 }
 
 .navitem {
@@ -239,14 +249,14 @@ div {
 }
 
 .glassyEventContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 10vh;
+	overflow: auto;
+	margin-top: 2vh;
 	width: 80%;
 	height: 70vh;
 	overflow: auto;
-	padding: 20px;
-	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
 }

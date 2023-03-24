@@ -15,15 +15,25 @@ var hyperspeed_downscale = 1.3;
 var current_scale = 0.1;
 
 // select the initial website theme
-let theme = "fire"
+// let theme = "fire"
 // let theme = "simple"
+
+let theme
+if (localStorage.getItem("theme")) {
+  theme = localStorage.getItem("theme")
+  console.log(theme);
+}else{
+  theme = "fire"
+}
 
 function toggleTheme() {
   console.log("toggled");
   if (theme === "simple") {
     theme = "fire"
+    localStorage.setItem("theme", theme);
   } else {
     theme = "simple"
+    localStorage.setItem("theme", theme);
   }
   init()
 }
@@ -249,6 +259,7 @@ function initializeEventsPg(data) {
   // categorize data
   let scienceEvents = data.filter((item) => item["Category"] === "Science Events");
   let headlineEvents = data.filter((item) => item["Category"] === "Headlines Events");
+  console.log(headlineEvents);
   let culturalEvents = data.filter((item) => item["Category"] === "Culturals");
 
   // create events page
@@ -261,6 +272,7 @@ function initializeEventsPg(data) {
   culturalEvents.forEach(element => {
     document.getElementById("Culturals").innerHTML += `<div class="eventIconContainer glassyDiv" onclick="openEvent('${element["Event Name"]}')" >${element["Event Name"]}</div>`
   });
+
 }
 
 // events page navigation
@@ -276,7 +288,7 @@ function makeEventPage(data) {
   document.getElementById('4').innerHTML = `
     <div class="glassyDiv glassyEventContainer">
 
-      <div style="overflow: scroll;margin-bottom: 10vh;">
+      <div style="overflow: scroll;margin-bottom: 11vh;">
           <h1 style="width: 100%;text-align: center;">${data["Event Name"]}</h1>
           <div style="height: max-content;scroll-behavior: smooth;">
               <div>
@@ -323,14 +335,14 @@ function makeEventPage(data) {
               </div>
           </div>
       </div>
-
-      <div style=" position: absolute;bottom: 10vh;display: flex;flex-direction: row;">
+      <div style=" position: absolute;bottom: 0;display: flex;flex-direction: row;">
           <button id="addButton" class="glassyDiv registerButton" style="width:120px;"
               onclick="switchDivTo('1')">
               <h3>back</h3>
           </button>
-          <div style="width:40px;"></div>
-          <a href="${data["Registration"]}" target="_blank" rel="noopener noreferrer">
+          <div style="width:40px;"></div>` + 
+          (data["onspot"]==="0"?
+          `<a href="${data["Registration"]}" target="_blank" rel="noopener noreferrer">
             <button id="addButton" class="glassyDiv registerButton" style="width:120px;">
                 <h3>Register</h3>
             </button>
@@ -339,10 +351,23 @@ function makeEventPage(data) {
 
   </div>
   `
+  :
+  `<button id="addButton" class="glassyDiv registerButton" onclick="onspotAlert('${data["Registration"]}')" style="width:120px;">
+                <h3>Register</h3>
+            </button>
+      </div>
+
+  </div>
+  `)
+}
+
+function onspotAlert(alertPrompt) {
+  // alert("You can register onspot for this event :)");
+  alert(alertPrompt);
 }
 
 setTimeout(() => {
-  // switchDivTo('3')
+  // switchDivTo('4')
 }, 1200);
 
 var acc = document.getElementsByClassName("accordion");
