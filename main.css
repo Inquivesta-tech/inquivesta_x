@@ -244,7 +244,7 @@ div {
 }
 
 #navbar>.glassyDiv {
-	border-radius: 10px;
+
 	position: relative;
 	padding: 10px;
 	width: 100vw;
@@ -270,8 +270,7 @@ div {
 }
 
 /* FAQ */
-.faqContainer {
-}
+.faqContainer {}
 
 .glassyEventContainer {
 	display: flex;
@@ -297,7 +296,7 @@ div {
 	height: 70vh;
 	overflow: auto;
 	padding: 20px;
-	overflow: auto;	
+	overflow: auto;
 }
 
 
@@ -340,7 +339,7 @@ div {
 	}
 
 	.eventInformation {
-		width : 40vw;
+		width: 40vw;
 	}
 
 	/* FAQ Stuff */
