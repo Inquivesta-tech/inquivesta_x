@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="yt.svg"
+   xml:space="preserve"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   style="enable-background:new 0 0 1000 1000;"
+   id="Layer_1"><metadata
+     id="metadata17"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs15" /><sodipodi:namedview
+     inkscape:current-layer="Layer_1"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="827.15892"
+     inkscape:cx="1089.9649"
+     inkscape:zoom="0.433"
+     showgrid="false"
+     id="namedview13"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" /><style
+     id="style2"
+     type="text/css">
+	.st0{fill:#FF0000;}
+	.st1{fill:#FFFFFF;}
+</style><title
+     id="title4" /><path
+     style="fill:#ffffff"
+     d="M 500 0 C 223.9 0 0 223.9 0 500 C 0 776.1 223.9 1000 500 1000 C 776.1 1000 1000 776.1 1000 500 C 1000 223.9 776.1 0 500 0 z M 500.09961 266 C 500.09961 266 707.7 266 759.5 280 C 788.1 287.7 810.59922 310.29961 818.19922 339.09961 C 831.99922 391.19961 832 500 832 500 C 832 500 831.99961 608.80039 818.09961 660.90039 C 810.49961 689.70039 788.00039 712.3 759.40039 720 C 707.70039 734 500 734 500 734 C 500 734 292.39961 734 240.59961 720 C 211.99961 712.3 189.50039 689.70039 181.90039 660.90039 C 168.00039 608.80039 168 500 168 500 C 168 500 168 391.19961 182 339.09961 C 189.6 310.29961 212.09922 287.7 240.69922 280 C 292.39922 266 500.09961 266 500.09961 266 z M 432.09961 401.30078 L 432.09961 598.69922 L 605.59961 500 L 432.09961 401.30078 z "
+     id="path6" /></svg>

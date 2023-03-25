@@ -288,7 +288,7 @@ function makeEventPage(data) {
   document.getElementById('4').innerHTML = `
     <div class="glassyDiv glassyEventContainer">
 
-      <div style="overflow: scroll;margin-bottom: 11vh;">
+      <div style="overflow: auto;margin-bottom: 11vh;">
           <h1 style="width: 100%;text-align: center;">${data["Event Name"]}</h1>
           <div style="height: max-content;scroll-behavior: smooth;">
               <div>

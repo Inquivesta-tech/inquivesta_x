@@ -42,7 +42,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./fly.css">
+    <!-- <link rel="stylesheet" href="./fly.css"> -->
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
@@ -72,18 +72,18 @@
           </div>          
     </div> -->
 
-    <div class="inquicon" style="position: absolute;" ontouchstart="toggleTheme()">
-        <img src="/assests/logos/inquiconColored.png" alt="" style="width: 50px; margin: 20px;">
+    <div class="inquicon" style="position: absolute;" onclick="toggleTheme()">
+        <img src="/assests/logos/inquiconColored.png" alt="" style="min-width: 50px;width: 5vw;margin: 20px;">
     </div>
     <div style="width: 100vw;z-index: 1;max-width: 100vw;padding-top: 8vh;display: grid;" id="mainContainer">
 
         <div class="displaynone child" id="0" style="width: 80%;justify-self: center;">
             <div style="height: 80vh;display: flex;flex-direction: column;align-items: center;justify-content: center;">
-                <img src="/assests/logos/pheonixLogo.png" alt="" style="display: inherit;width:300px;" id="logo">
+                <img src="/assests/logos/pheonixLogo.png" alt="" style="display: inherit;min-width:300px;width: 30vw;" id="logo">
                 <a href="https://unstop.com/o/mefxbws?lb=Otz3Q9l" target="_blank" rel="noopener noreferrer">
                     <button class="glassyDiv registerButton"
-                        style="width:40vw;display: flex;flex-direction: column;align-items: center;justify-content: center;">
-                        <!-- ontouchstart="switchDivTo('1')" -->
+                        onclick="switchDivTo('1')"
+                        style="min-width:160px;width: 20vw;display: flex;flex-direction: column;align-items: center;justify-content: center;">
                         <h3>Register Now</h3>
                     </button>
                 </a>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="displaynone child" id="1">
-            <div style="width: 90%;height: 75vh;overflow: auto;" class="">
+            <div class="eventListContainer">
                 <div style="overflow: auto;">
 
                     <h1>ScienceEvents</h1>
@@ -119,7 +119,6 @@
 
         <div class="displaynone child" id="2">
             <div class="glassyDiv glassyEventContainer">
-
                 <h1>
                     Coming Soon
                 </h1>
@@ -151,27 +150,10 @@
             </div>
         </div>
 
-        <div class="displaynone child" id="5">
-            <div class="glassyDiv glassyEventContainer" >
-                <h2 style="width: 100%;text-align: center;">About Us</h2>
-                <p style="text-align: justify;">
-                    Inquivesta, which is hosted by the students of IISER Kolkata, is the first and one of the largest
-                    science college festivals in India. It was created in 2011 with the aim of promoting science in an
-                    entertaining and engaging manner to a wider audience. Since then, Inquivesta has successfully
-                    organized nine editions under the tagline "Being Inquisitive". These editions have included a
-                    variety of events that showcase science, technology, and innovation, as well as workshops, guest
-                    lectures, celebrity appearances, and engaging competitions in fine arts, sports, and adventure.
-                    Inquivesta attracts a diverse audience ranging from school and college students to working
-                    professionals.
-                </p>
-
-            </div>
-        </div>
-
         <div class="displaynone child" id="4">
             <div class="glassyDiv glassyEventContainer">
 
-                <div style="overflow: scroll;margin-bottom: 11vh;">
+                <div style="overflow: auto;margin-bottom: 11vh;">
                     <h1 style="width: 100%;text-align: center;">Event Name</h1>
                     <div style="height: max-content;scroll-behavior: smooth; width:80%">
                         <div>
@@ -231,10 +213,27 @@
             </div>
         </div>
 
+        <div class="displaynone child" id="5">
+            <div class="glassyDiv glassyEventContainer" >
+                <h2 style="width: 100%;text-align: center;">About Us</h2>
+                <p style="text-align: justify;">
+                    Inquivesta, which is hosted by the students of IISER Kolkata, is the first and one of the largest
+                    science college festivals in India. It was created in 2011 with the aim of promoting science in an
+                    entertaining and engaging manner to a wider audience. Since then, Inquivesta has successfully
+                    organized nine editions under the tagline "Being Inquisitive". These editions have included a
+                    variety of events that showcase science, technology, and innovation, as well as workshops, guest
+                    lectures, celebrity appearances, and engaging competitions in fine arts, sports, and adventure.
+                    Inquivesta attracts a diverse audience ranging from school and college students to working
+                    professionals.
+                </p>
+
+            </div>
+        </div>
+
     </div>
     <div class="navigationPhone" id="navbar">
-        <div style="position: relative;padding: 10px;width: 100vw;border-radius: 20px; display: flex;flex-direction: row;justify-content: space-evenly;align-items: center;"
-            class="glassyDiv">
+        <!-- <div style="position: relative;padding: 10px;width: 100vw;border-radius: 20px; display: flex;flex-direction: row;justify-content: space-evenly;align-items: center;" class="glassyDiv"> -->
+        <div class="glassyDiv">
 
             <button onclick="switchDivTo('5')" class="navitem" id="5nav">
                 <img src="/assests/icons/Group 160.png" style="width: 40px;" alt="info">
