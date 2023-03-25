@@ -19,11 +19,16 @@ var current_scale = 0.1;
 // let theme = "simple"
 
 let theme
+// console.log(localStorage.getItem("theme"));
 if (localStorage.getItem("theme")) {
   theme = localStorage.getItem("theme")
   console.log(theme);
-}else{
-  theme = "fire"
+} else {
+  let i = Math.random()
+  console.log(i);
+  i < 0.5 ? (theme = "fire") : (theme = "simple")
+  localStorage.setItem("theme", theme);
+  console.log(theme);
 }
 
 function toggleTheme() {
@@ -58,7 +63,7 @@ function init() {
   let simple = [0xF000DB, 0x0BC4CF, 0x133DC9, 0x621882]
   let colors
 
-  console.log(theme);
+  // console.log(theme);
 
   if (theme === "fire") {
     colors = fire
@@ -259,7 +264,7 @@ function initializeEventsPg(data) {
   // categorize data
   let scienceEvents = data.filter((item) => item["Category"] === "Science Events");
   let headlineEvents = data.filter((item) => item["Category"] === "Headlines Events");
-  console.log(headlineEvents);
+  // console.log(headlineEvents);
   let culturalEvents = data.filter((item) => item["Category"] === "Culturals");
 
   // create events page
@@ -340,9 +345,9 @@ function makeEventPage(data) {
               onclick="switchDivTo('1')">
               <h3>back</h3>
           </button>
-          <div style="width:40px;"></div>` + 
-          (data["onspot"]==="0"?
-          `<a href="${data["Registration"]}" target="_blank" rel="noopener noreferrer">
+          <div style="width:40px;"></div>` +
+    (data["onspot"] === "0" ?
+      `<a href="${data["Registration"]}" target="_blank" rel="noopener noreferrer">
             <button id="addButton" class="glassyDiv registerButton" style="width:120px;">
                 <h3>Register</h3>
             </button>
@@ -351,8 +356,8 @@ function makeEventPage(data) {
 
   </div>
   `
-  :
-  `<button id="addButton" class="glassyDiv registerButton" onclick="onspotAlert('${data["Registration"]}')" style="width:120px;">
+      :
+      `<button id="addButton" class="glassyDiv registerButton" onclick="onspotAlert('${data["Registration"]}')" style="width:120px;">
                 <h3>Register</h3>
             </button>
       </div>
@@ -374,7 +379,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  acc[i].addEventListener("click", function () {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
