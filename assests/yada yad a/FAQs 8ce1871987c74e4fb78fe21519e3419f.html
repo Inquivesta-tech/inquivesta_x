@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>FAQs</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article class="page sans"><header>
+	
+	<h1 class="page-title">FAQs</h1></header><div class="page-body"><ul class="toggle"><li><details><summary><strong>Registration related</strong></summary><ul class="toggle"><li><details><summary><strong>Ticketing and Registration:</strong></summary><p class="">Is registration compulsory for all? How much is the ticket?</p><p class="">Yes, registration is compulsory for all to enter Inquivesta X. Separate event registration is also required to participate in events. Registration can be done online at <a href="http://www.inquivesta.in/">www.inquivesta.in</a> or at the Registration Kiosks on campus on 1st and 2nd April 2023 (10 am - 5 pm).</p></details></li></ul><ul class="toggle"><li><details><summary><strong>How and where do I register?</strong></summary><p class="">The General Registration and Event Registrations are open on the website : <a href="http://www.inquivesta.in/">www.inquivesta.in</a>. Some events are only taking limited registrations, so quickly register to guarantee your fun and excitement on the three most amazing days this year!</p><p class="">Spot Registrations for entry and some events that allow spot registrations will be available on 1st April and 2nd April from 10 am - 5 pm at the &#x27;Saath Number&#x27; gate Kiosk, and the in-campus Kiosk. The location of both kiosks will be evident upon entry into the IISER Kolkata Campus.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>How much is the entry fee?</strong></summary><p class="">The cost of the 3-Day Pass is ₹200.00/-. This 3-Day Pass will not only allow you entry into Inquivesta X at any time on 31 March, 1st April, and 2nd April but also:</p><ul class="bulleted-list"><li style="list-style-type:disc">Free Entry into one solo event of your choice or one team event of your choice provided there are other fest-goers who also wish to participate in said group event but do not have a team ready already.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Full access to the Food Stalls/Food Court.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Free entry into Celebrity Talks and Guest Lectures scheduled on any of the three days.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Free entry into Movie-Nite, Game-nite, Cultural-Nite, and Concert-nite.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Free Digi-Raffle entry to get the chance to win exciting prizes.</li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>Does the entry fee include event registrations?</strong></summary><p class="">No, the entry fee only allows you to participate in ONE event of your choice; and witness the various events, celebrity talkshows, guest lectures, bands, movie, games, and more on any day of Inquivesta X.</p><p class="">To take part in multiple events, you need to register separately in each event.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>If I register for an event, do I still have to pay the Entry Fee?</strong></summary><p class="">If the event you or your team have registered for is worth greater than or equal to ₹100, then your Entry Fee will be waived for the day(s) of the event.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>If I register for an event/entry but do not show up, will I be refunded?</strong></summary><p class="">Otherwise, you need to pay the Entry Fee to enter the ultimate party in town!</p><p class="">No, we will not be able to provide refunds upon absence of registered participants. The registration fees go toward material and arrangement costs that we would have prepared for you already.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>If I register for two events whose times are clashing, will I be refunded?</strong></summary><p class="">The events are mostly designed and are both spatially and temporally spaced in such a manner that allows for participation in multiple events. Please refer to the timings of the events and register accordingly to be safe. In case you want to participate in two events which are happening simultaneously, contact the event organisers. We will do everything we can to adjust your slots and facilitate your participation in both events.</p><p class="">However, if the participant fails to inform the event organisers of the clash beforehand or misses a pre-informed/pre-adjusted slot without notice, we will not be able to provide a refund.</p><p class="">We welcome and encourage you to take part in multiple events because all events have something exciting going for them.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What is the refund policy for Inquivesta X?</strong></summary><p class="">Refund requests are entertained only if any unfortunate circumstance forces us to cancel an event that you have registered for or recall a merchandise product that you have paid for. Refund requests upon absence/late arrival after registration are in general, not entertained.</p><p class="">However, we will process all requests for a refund on a case by case basis. If we are convinced of the validity of any request, we will process the refund. In that case, the amount will be reflected in the bank account you used to pay the registration fee with.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>I am a student of IISER Kolkata. Do I have to register for entry into Inquivesta X?</strong></summary><p class="">Yes, you must register for entry into Inquivesta X on 1st and 2nd April at our Registration Kiosks. However, producing your IISER Kolkata ID Card/Bonafide Certificate will exempt you from paying any entry fee.</p><p class="">You will however have to pay for event registrations as per the registration fees for individual events.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>I am a student of IISER Kolkata. Do I have to pay for registration into events?</strong></summary><p class="">Yes, you will have to pay for event registration as specified in the events page @&lt;a href=”https://<a href="http://www.inquivesta.in/">inquivesta.in</a>”&gt;<a href="http://www.inquivesta.in/">inquivesta.in</a>&lt;a&gt;</p></details></li></ul><ul class="toggle"><li><details><summary><strong>I am a faculty/staff/family member of faculty/family member of staff of IISER Kolkata. Do I have to pay for entry/event registration?</strong></summary><p class="">Yes</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What are the exemptions to registrations and ticketing?</strong></summary><ol type="1" class="numbered-list" start="1"><li>All individuals of ages 12 and under are exempted from any entry fee. A valid Government ID Card containing name, photograph, and age/date of birth is required to be produced upon registration/entry into Inquivesta X, IISER Kolkata.</li></ol><ol type="1" class="numbered-list" start="2"><li>All students of IISER Kolkata are exempted from entry fee upon being able to produce their institute ID card or Bonafide Certificate.</li></ol><ol type="1" class="numbered-list" start="3"><li>No other exemption exists. Any request for exemption that does not fall in the above categories is under the discretion of the Inquivesta X Core Committee.</li></ol></details></li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>Events, Timeline, and Related:</strong></summary><ul class="toggle"><li><details><summary><strong>How will I get to know about timings and venues for the events during Inquivesta X?</strong></summary><p class="">A digital flyer will be made available on the website: <a href="http://www.inquivesta.in/">www.inquivesta.in</a> which will cover all these details. Registration Kiosks and regular announcements through social media, and loudspeakers on ground will let you know about the different events and their venues.</p><p class="">The flyer will contain a detailed map and event timeline.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>How do I register for Events at Inquivesta X?</strong></summary><p class="">Go to <a href="http://www.inquivesta.in/">www.inquivesta.in</a>&gt;&gt;Events. You can browse each event and register for the one you want to participate in. You also need to register for entry in case your/your team&#x27;s event ticket is worth below ₹100.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Who can participate in these events? Is there any fee involved for registration?</strong></summary><p class="">Anyone and everyone is allowed to participate in Inquivesta X&#x27;s events provided they satisfy the eligibility constraints.</p><p class="">Events are paid. Details of ticket and prize money are mentioned on website.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Are on-spot registrations allowed during the fest?</strong></summary><p class="">On-spot registrations may or may not be allowed depending on the number of registered participants for the particular event. We suggest that you register online as soon as possible to prevent any unforeseen circumstances.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Will I get a certificate for participation in competitions during Inquivesta?</strong></summary><p class="">Yes everyone participating will get a digital certificate of participation.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Am I supposed to register for a team event individually or should each member register separately?</strong></summary><p class="">One person from the team can register for all participants.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What is the date, time and venue for these events?</strong></summary><p class="">The detailed schedule of the competitions will be released soon. Stay tuned to our social media handles and regularly check your mail if you have registered.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Where can I find rules and regulations of each event?</strong></summary><p class="">On the webpages of <a href="http://www.inquivesta/">www.inquivesta</a>.in.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Can I participate in multiple events?</strong></summary><p class="">Yes, but you have to register separately. Clashes, if any, may be resolved by notifying the event organisers.</p></details></li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>Special/Pronite Shows</strong></summary><ul class="toggle"><li><details><summary><strong>Am I eligible to attend a talkshow/concert/movie/game-nite?</strong></summary><p class="">Any registered member of Inquivesta X can attend celebrity talkshows, guest lectures, concert, movie, gamenite free of cost provided there is space available. It is on a first come, first served basis.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>How can I attend concerts?</strong></summary><p class="">The concerts are free for all. You just need to be registered at one of the kiosks.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What are the timings of the concert?</strong></summary><p class="">Will be updated soon.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What things are not allowed in the concert?</strong></summary><p class="">Cameras, cosmetics, pointed objects like scissors, knives, etc are not allowed. Make sure you bring your friends along, though! There are arrangements inside for water, along with a food court. So there won’t be any need to carry water! You cannot carry your own food items. However, you can buy food from food courts inside the concert area.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>I am currently studying at IISER Kolkata. How do I get to attend pronites?</strong></summary><p class="">You need to register at a Registration Kiosk to attend shows/game-nites.</p></details></li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>How to Reach, Accomodation and Transport</strong></summary><ul class="toggle"><li><details><summary><strong>What are the nearest railway stations and airports to reach IISER Kolkata?</strong></summary><ol type="1" class="numbered-list" start="1"><li>The nearest railway station is the Kalyani Railway Station. The station has regular trains to and fro from Kolkata. From Kalyani Railway Station, you may use an auto-rickshaw/cab/bus by asking them to drop you at &#x27;Saath Number, IISER Kolkata&#x27;. It is a 30 minute journey by road, give or take a few minutes.</li></ol><ol type="1" class="numbered-list" start="2"><li>The nearest airport is the Netaji Subhash Chandra Bose Airport, Kolkata. From there, you may take a pre-paid taxi or use Ola/Uber to reach IISER Kolkata. The journey will take anywhere between 1.5-2 hours depending on the time of day you are arriving at. A cheaper option would be to rent local cabs/taxis from around IISER Kolkata, you may contact our Hospitality and Public Relations Manager for the same.</li></ol></details></li></ul><ul class="toggle"><li><details><summary><strong>How do I reach IISER Kolkata by road?</strong></summary><ul class="toggle"><li><details><summary>If you are coming from Kolkata via Kalyani Expressway with your own vehicle:</summary><ul class="bulleted-list"><li style="list-style-type:disc">Take a right turn at &quot;Kampa More&quot; (close to Kanchrapara railway station) and drive to Bara Jagulia (about 9 km).</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Take a left turn to be on National Highway 34 (NH34).</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Drive for 1.7 km. The approach road to IISER-K (IISER-K connector road in Google map) would be on your left (the place is &quot;4 no gate&quot; stop for buses/auto rickshaws).</li></ul></details></li></ul><ul class="toggle"><li><details><summary>If you are coming from Kolkata via National Highway 34 (NH34) with your own vehicle:</summary><ul class="bulleted-list"><li style="list-style-type:disc">Drive up to Bara Jagulia.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Drive for another 1.7 km. The approach road to IISER-K (IISER-K connector road in Google map) would be on your left (the place is &quot;4 no gate&quot; stop for buses/auto rickshaws).</li></ul></details></li></ul><ul class="toggle"><li><details><summary>If you are coming via National Highway 34 (NH34) by bus (from or to Kolkata):</summary><ul class="bulleted-list"><li style="list-style-type:disc">Get down at Bara Jagulia.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Take bus no 27 (to Kalyani).</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Get down at the &quot;7 no Gate&quot; stop (takes about 10 minutes from Bara Jagulia).</li></ul></details></li></ul><ul class="toggle"><li><details><summary>If you are driving from North Bengal via NH34:</summary><ul class="bulleted-list"><li style="list-style-type:disc">Note the Kalyani more (crossing between Kalyani road and NH34).</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">Take a right turn towards Kalyani.</li></ul><ul class="bulleted-list"><li style="list-style-type:disc">IISER-K entrance (7 no Gate) would be on your left after about 1.6 km.</li></ul></details></li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>Will you provide any transportation?</strong></summary><p class="">Depending on the number of participants from a particular college, we will try to provide a bus on a circuit around Kalyani. Please keep yourselves updated on our social media/website forums. We will communicate transport arrangements there, if made successfully.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Are you providing accomodation?</strong></summary><p class="">Yes, we will provide accomodation for the night of 1st April at a nominal cost of ₹130.00/- for anyone who is 18 or above 18. This will cover a mattress, mosquito repellent, water, charging point, and access to a shower/mug-bucket in a dorm/room sharing setup. You may bring a sleeping bag or a bedsheet, and a fresh set of clothes to wear if required.</p><p class="">However, you are likely to spend most of the night in this case in our Movie Screening or Game Nite! You are encouraged to experience the night life at IISER Kolkata!</p><p class="">To request for accommodation, you need to communicate the same to an event organiser or mail &lt;a href=”mailto:<a href="mailto:inquivesta@iiserkol.ac.in">inquivesta@iiserkol.ac.in</a>”&gt;<a href="mailto:inquivesta@iiserkol.ac.in">inquivesta@iiserkol.ac.in</a>&lt;/a&gt; before the event. If you decide to stay on campus on the 1st of April, you may go to the registration Kiosks and request for arrangements for accomodation. Note that accomodation is subject to availability and will be allotted on a first come, first serve basis.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Does the accommodation fee include the food facility as well?</strong></summary><p class="">No. The accommodation charges don’t include food.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What all does the accommodation facilities include?</strong></summary><p class="">The accommodation cost includes staying within the campus during the festival, a mattress in a well secured, hygienic room/dorm, and direct entry to Game Nite, and Movie Nite!</p><p class="">Facilities available within IISER Kolkata Campus</p><p class="">Medical Facilities:</p><p class="">IISER Kolkata has a functioning Medical Unit to take care of emergencies. In addition, AIIMS Kalyani is a few minutes away from the campus. An ambulance will be placed near Inquivesta X Arena grounds for responding to any untoward emergencies. In addition security personnel will be ready to call the Medical unit in any emergency. In case of any medical emergency, contact any event organiser/volunteer from our team or ask any security personnel around you to call an ambulance immediately.</p><p class="">Fire and Security:</p><p class="">IISER Kolkata is well secured by CCTV Cameras in all public areas and security personnel at hotspots. Fire Hydrants, alarms and exit strategies are present in all prominent locations of the festival.</p><p class="">If you feel any kind of threat, try to shout or run to the nearest security desk and report for immediate action.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Can I withdraw cash if required?</strong></summary><p class="">Yes, an ATM service is available at IISER Kolkata. It will be pin pointed on the map provided to you digitally.</p></details></li></ul></details></li></ul><ul class="toggle"><li><details><summary><strong>General Queries:</strong></summary><ul class="toggle"><li><details><summary><strong>What is Inquivesta?</strong></summary><p class="">Inquivesta is the annual festival organised by students of the Indian Institute of Science Education and Research (IISER) Kolkata. Inquivesta typically is hosted over three days numbered as Day 0, Day 1 and Day 2 with the days being a Friday, Saturday, and Sunday respectively. Inquivesta serves to propogate scientific awareness in a fun packaging while allowing participants to showcase their cultural, entrepreneurial, technological, sport talents as well. In fact, Inquivesta is the largest &#x27;science&#x27;-festival and was the only college science festival until a few years ago. It still remains the only college festival known typically for its scientific events and some fun events like Crime Scene Investigation, Thrust, Land of Secret Treasures, etc by its loyal fan-base in Kalyani and Kolkata. In the past few years, Inquivesta has also hosted several celebrity shows and guest lectures including Zakir Khan, Indian Ocean, and others.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Who can attend Inquivesta?</strong></summary><p class="">Any individual who is excited to engage, interact, have fun, or is an introvert who wants to secretly enjoy a show is free to attend Inquivesta. Please refer to the ticketing details in the Ticketing Section of the FAQ and</p></details></li></ul><ul class="toggle"><li><details><summary><strong>When is Inquivesta X happening?</strong></summary><p class="">Inquivesta X is scheduled for 31 March - 2 April. The detailed itinerary, event timeline, and schedule for celebrity shows and talks will be updated on the website: <a href="http://www.inquivesta.in/">www.inquivesta.in</a>. Individual event timings are available on the website&#x27;s event pages. Gear up for the ultimate party in town!</p></details></li></ul><ul class="toggle"><li><details><summary> <strong>Where is Inquivesta X happening?</strong></summary><p class="">Inquivesta X is set in the large, plush, and pollution-free 220-acre campus of The Indian Institute of Science Education and Research Kolkata. The events are set across the Lecture Hall Complex (LHC), Teaching and Research Complex (TRC), Rabindranath Tagore Auditorium, Sports Grounds, Student Activity Centre (SAC), Lecture Hall 4 (LH4), in front of ICV-NSCB Mess Area, and online. The detailed Arena Map and event venues will be appropriately updated on the website: <a href="http://www.inquivesta.in/">www.inquivesta.in</a>. Individual event venues can be obtained from the event pages.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Do I need to bring an Identity Card?</strong></summary><p class="">Yes, please bring a soft/hard copy of a Govt. issued/School/College ID Card with you at all times. Your ticket registration will be verified against your identity card.</p><p class="">We are a group of friends not participating in any event. We just want to have fun and hang around the food stalls/events/campus. Would we be allowed?</p><p class="">Yes, you definitely can enter Inquivesta X with the general entry registration at &#x27;Saath Number&#x27; gate, IISER Kolkata.</p><p class="">What is the procedure to be followed after we reach IISER Kolkata?</p><p class="">You need to register at the Registration Kiosk. You will be given a digital ID which you have to produce at each event along with your ticket thereafter.</p><p class="">Who is in charge of Inquivesta X? / Who is organizing Inquivesta X?</p><p class="">Inquivesta X is hosted by an elected committee of students of IISER Kolkata, called the Inquivesta Core Committee. The Inquivesta Core Committee is in charge of the overall functioning of the fest. The Inquivesta Core Committee is headed by the Fest Coordinator. Details of the composition of the Core Committee can be found in the website: <a href="http://www.inquivesta.in/">www.inquivesta.in</a>.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>When did Inquivesta begin?</strong></summary><p class="">Inquivesta was first conceptualized and executed in 2010-2011. The first Inquivesta hosted several innovative science and fun events, attracted various sponsors, and achieved a moderate number of registrations. The first Inquivesta was held in the IISER Kolkata Transit Campus.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>What is Enya? / Who is Enya?</strong></summary><p class="">Enya is our friendly phoenix mascot, who symbolizes the revival and rebirth of Inquivesta after the Covid 19 Pandemic. As she is set to rise from the ashes in her new body, she is going to bring back the (Inquivesta) X that was put on hold in 2020 due to the Covid 19 Pandemic. She is a celebration of our tenth edition happening after several odds faced by our community, and the larger community we are part of. Though she is a fiery phoenix, she is multitalented and powered enough to bring back the town of Kalyani to life with IISER Kolkata&#x27;s Inquivesta X finally!</p></details></li></ul><ul class="toggle"><li><details><summary><strong>When was the last Inquivesta?</strong></summary><p class="">The last Inquivesta was our ninth edition, Inquivesta 9.0 held on March 8, 9, 10, 2019. The tenth edition, Inquivesta X was scheduled initially for March 20-22, 2020. However, in obedience with measures taken by the Government of India and the Government of West Bengal to curb the spread of the Covid 19 Pandemic, it was postponed indefinitely until now.</p></details></li></ul><ul class="toggle"><li><details><summary><strong>Was there an online Inquivesta during the Covid 19 Pandemic?</strong></summary><p class="">No, there was no online version of Inquivesta. However, in 2021, IISER Kolkata hosted Revival - an exclusive online Cultural festival that had students of the seven Indian Institutes of Science Education and Research located in Kolkata, Berhampur, Bhopal, Thiruvananthapuram, Mohali, Pune, and Tirupati, the National Institute of Science Education and Research Bhubaneshwar, the Center of Excellence in Basic Sciences, and the Indian Institute of Science Bangalore participate and engage in huge numbers. The details of this festival can be found in <a href="https://revival.iiserkol.ac.in/">https://revival.iiserkol.ac.in</a>. An online programme featuring performances from across India was held in association with Tenacity - the All IISER Virtual Games and Sports Event.</p></details></li></ul></details></li></ul></div>
+
+</article></body></html>

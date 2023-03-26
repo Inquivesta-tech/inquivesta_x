@@ -65,3 +65,62 @@ div::-webkit-scrollbar-thumb {
 div::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 1);
 }
+
+/* toggle list */
+
+
+.toggle {
+  padding-inline-start: 0em;
+  list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle>li>details {
+  padding-left: 1.7em;
+}
+
+.toggle>li>details>summary {
+  margin-left: -1.1em;
+}
+
+ul.toggle>li {
+  list-style: none;
+}
+
+/* heartbeat effect */
+
+:root {
+  --animation-speed: 2s;
+  --background-color: #212121;
+}
+
+.heart {
+  animation: heartbeat var(--animation-speed) infinite;
+  user-select: none;
+}
+
+.heart img {
+  width: 150px;
+}
+
+/* Animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  8% {
+    transform: scale(1.2);
+  }
+  16% {
+    transform: scale(1);
+  }
+  24% {
+    transform: scale(1.2);
+  }
+  32% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

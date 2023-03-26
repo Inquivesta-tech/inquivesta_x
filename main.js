@@ -68,9 +68,11 @@ function init() {
   if (theme === "fire") {
     colors = fire
     document.getElementById('logo').src = "/assests/logos/pheonixLogo.png"
+    // document.getElementById('inquicon').src = "/assests/logos/inquiconBlueColored.png"
   } else {
     colors = simple
     document.getElementById('logo').src = "/assests/logos/logo.png"
+    // document.getElementById('inquicon').src = "/assests/logos/inquiconColored.png"
   }
 
   var light = new THREE.DirectionalLight(colors[0], 0.5);
