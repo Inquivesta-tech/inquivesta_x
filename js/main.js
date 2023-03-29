@@ -67,12 +67,12 @@ function init() {
 
   if (theme === "fire") {
     colors = fire
-    document.getElementById('logo').src = "/assests/logos/pheonixLogo.png"
-    // document.getElementById('inquicon').src = "/assests/logos/inquiconBlueColored.png"
+    document.getElementById('logo').src = "/assets/logos/pheonixLogo.png"
+    // document.getElementById('inquicon').src = "/assets/logos/inquiconBlueColored.png"
   } else {
     colors = simple
-    document.getElementById('logo').src = "/assests/logos/logo.png"
-    // document.getElementById('inquicon').src = "/assests/logos/inquiconColored.png"
+    document.getElementById('logo').src = "/assets/logos/logo.png"
+    // document.getElementById('inquicon').src = "/assets/logos/inquiconColored.png"
   }
 
   var light = new THREE.DirectionalLight(colors[0], 0.5);
@@ -94,7 +94,7 @@ function init() {
   scene.fog = new THREE.FogExp2(0x000000, 0.15);
   THREE.TextureLoader.prototype.crossOrigin = '';
   '';
-  texture = new THREE.TextureLoader().load("https://threejs.org/examples/textures/water.jpg");
+  texture = new THREE.TextureLoader().load("./assets/texture/water.jpg");
   texture.wrapT = THREE.RepeatWrapping;
   texture.wrapS = THREE.RepeatWrapping;
 
@@ -256,7 +256,7 @@ function switchDivTo(Id) {
 let data
 let scienceEvents, headlineEvents, culturalEvents
 
-var importdata = $.getJSON("./assests/data.json", function () {
+var importdata = $.getJSON("./assets/data.json", function () {
   data = importdata.responseJSON
   initializeEventsPg(data)
 })
