@@ -289,6 +289,7 @@ function openEvent(eventname) {
   switchDivTo('4')
 }
 
+// make event page using data from json
 function makeEventPage(data) {
   console.log(data["Event Name"]);
 
@@ -368,27 +369,13 @@ function makeEventPage(data) {
   `)
 }
 
+// this function is for the events that will have inspot registrations
 function onspotAlert(alertPrompt) {
   // alert("You can register onspot for this event :)");
   alert(alertPrompt);
 }
 
-// to avoid clicking buttons during testing
+// to spare clicking buttons during testing
 setTimeout(() => {
   // switchDivTo('3')
 }, 1200);
-
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
