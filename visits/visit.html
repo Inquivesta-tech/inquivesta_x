@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <div id="visitors">
+
+        </div>
+    </body>
+<script>
+
+    if (window.location.host === "inquivesta.in") {
+        fetch("https://api.countapi.xyz/hit/inquivesta.in/visits")
+            .then((response) => response.json())
+            .then((json) => {
+                document.getElementById("visitors").innerHTML=json.value;
+            })
+
+    }
+    else {
+        alert("test visits don't count");
+        console.log(window.location.host);
+        fetch("https://api.countapi.xyz/info/inquivesta.in/d38e1acc-6a73-4269-ab68-020d8910f5ce")
+            .then((response) => response.json())
+            .then((json) => {
+                document.getElementById("visitors").innerHTML=json.value;
+            })
+
+    }
+
+
+    // function cb(response) {
+    //     console.log(response.value);
+    // }
+</script>
+<!-- <script async src="https://api.countapi.xyz/hit/testinquivesta.in/visits?callback=cb"></script> -->
+
+</html>
