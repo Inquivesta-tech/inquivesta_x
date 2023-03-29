@@ -94,7 +94,7 @@ function init() {
   scene.fog = new THREE.FogExp2(0x000000, 0.15);
   THREE.TextureLoader.prototype.crossOrigin = '';
   '';
-  texture = new THREE.TextureLoader().load("./assets/texture/water.jpg");
+  texture = new THREE.TextureLoader().load("https://threejs.org/examples/textures/water.jpg");
   texture.wrapT = THREE.RepeatWrapping;
   texture.wrapS = THREE.RepeatWrapping;
 
