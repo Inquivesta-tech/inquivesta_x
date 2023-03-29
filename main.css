@@ -23,6 +23,18 @@ a {
 	text-decoration: none;
 }
 
+.outlinenone {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	border-top: 0;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	outline: none;
+}
+
 /* canvas {
     overflow-clip-margin: unset;
     overflow: hidden;
@@ -79,7 +91,8 @@ a {
 }
 
 .child {
-	min-width: 400px;
+	/* min-width: 
+	min-width: 90vw;400px; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -145,9 +158,6 @@ a {
 		}
 	}
 
-	.child {
-		width: 90vw;
-	}
 }
 
 /* zooming on earth */
@@ -257,6 +267,14 @@ a {
 	justify-content: center;
 	align-items: center;
 	padding: 0 20px;
+}
+
+.socialContainer {
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /* ABHAY WALA PART */
@@ -370,6 +388,10 @@ a {
 	}
 
 	/* FAQ Stuff */
+	.socialContainer {
+		width: 20vw;
+	}
+
 	.glassyEventContainer {
 		width: 50vw;
 	}

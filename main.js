@@ -345,7 +345,7 @@ function makeEventPage(data) {
       <div style=" position: absolute;bottom: 0;display: flex;flex-direction: row;">
           <button id="addButton" class="glassyDiv registerButton" style="width:120px;"
               onclick="switchDivTo('1')">
-              <h3>back</h3>
+              <h3>Go Back</h3>
           </button>
           <div style="width:40px;"></div>` +
     (data["onspot"] === "0" ?
@@ -373,8 +373,9 @@ function onspotAlert(alertPrompt) {
   alert(alertPrompt);
 }
 
+// to avoid clicking buttons during testing
 setTimeout(() => {
-  // switchDivTo('4')
+  // switchDivTo('3')
 }, 1200);
 
 var acc = document.getElementsByClassName("accordion");

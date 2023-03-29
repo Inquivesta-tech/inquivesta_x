@@ -90,7 +90,7 @@ ul.toggle>li {
 /* heartbeat effect */
 
 :root {
-  --animation-speed: 2s;
+  --animation-speed: 1.6s;
   --background-color: #212121;
 }
 
@@ -108,16 +108,16 @@ ul.toggle>li {
   0% {
     transform: scale(1);
   }
-  8% {
+  7% {
     transform: scale(1.2);
   }
-  16% {
+  14% {
     transform: scale(1);
   }
-  24% {
+  21% {
     transform: scale(1.2);
   }
-  32% {
+  28% {
     transform: scale(1);
   }
   100% {
