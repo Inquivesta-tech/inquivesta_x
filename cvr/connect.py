@@ -13,8 +13,21 @@ client = gspread.authorize(credentials)
 
 # sheet.share('sg21ms204@iiserkol.ac.in', perm_type='user', role='writer')
 
-sheet = client.open("Copy of EventReg'23").sheet1
-data = sheet.get_all_records()
-for k in data:
-    if "gmail" in k["Player\'s Email"]:
-        print(k["Team Id"]) 
+sheet = client.open("Copy of EventReg'23")
+# data = sheet.get_all_records()
+# print(data)
+
+worksheet_list = sheet.worksheets()
+k = []
+
+for temp in worksheet_list:
+    name = temp.title
+    email = "srijita2825@gmail.com"
+    data = sheet.worksheet(name).get_all_records()
+    # print(name)
+    for line in data:
+        if line["Email"] == email:
+            k.append(name)
+
+print(worksheet_list[0].title)
+print(k)
