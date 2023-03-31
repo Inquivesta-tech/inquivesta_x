@@ -1,5 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import json
 
 
 # Connect to Google Sheets
@@ -18,16 +19,39 @@ sheet = client.open("Copy of EventReg'23")
 # print(data)
 
 worksheet_list = sheet.worksheets()
-k = []
 
-for temp in worksheet_list:
-    name = temp.title
-    email = "srijita2825@gmail.com"
-    data = sheet.worksheet(name).get_all_records()
-    # print(name)
-    for line in data:
-        if line["Email"] == email:
-            k.append(name)
+def find(email):
+    k = []
+    for temp in worksheet_list:
+        name = temp.title
+        data = sheet.worksheet(name).get_all_records()
+        # print(name)
+        for line in data:
+            if line["Email"] == email:
+                k.append(name)
+    authObj = {
+        "email":email,
+        "onspot": False,
+        "events" : k
+    } 
+    return json.dumps(authObj)
+
+email = "srijita2825@gmail.com"
+print(find(email))
+
+#  make list of list of emails
+
+loloe = []
+for wksheet in worksheet_list:
+    data = sheet.worksheet(wksheet).get
+
+# for temp in worksheet_list:
+#     name = temp.title
+#     email = "srijita2825@gmail.com"
+#     data = sheet.worksheet(name).get_all_records()
+#     # print(name)
+#     for line in data:
+#         if line["Email"] == email:
+#             k.append(name)
 
 print(worksheet_list[0].title)
-print(k)
