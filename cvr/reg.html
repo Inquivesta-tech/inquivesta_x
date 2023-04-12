@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div style="display:flex;flex-direction: row;">
+        <div>
+            <form action="" id="regg">
+                Email
+                <input type="email" name="Email" id="email"><br>
+                <b>
+                    Event List:
+                </b>
+                <br>
+                AilmentAct
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events0" id="0" onchange="gettotal(0)">
+                <label for="events0" id="lable0">0</label>
+                <br>
+                Fauxpert
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events1" id="1" onchange="gettotal(1)">
+                <label for="events1" id="lable1">0</label>
+                <br>
+                CritterHunt
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events2" id="2" onchange="gettotal(2)">
+                <label for="events2" id="lable2">0</label>
+                <br>
+                Rationale
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events3" id="3" onchange="gettotal(3)">
+                <label for="events3" id="lable3">0</label>
+                <br>
+                BeatTheDrop
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events4" id="4" onchange="gettotal(4)">
+                <label for="events4" id="lable4">0</label>
+                <br>
+                NutJob
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events5" id="5" onchange="gettotal(5)">
+                <label for="events5" id="lable5">0</label>
+                <br>
+                ThrustForBeginners
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events6" id="6" onchange="gettotal(6)">
+                <label for="events6" id="lable6">0</label>
+                <br>
+                Chess
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events7" id="7" onchange="gettotal(7)">
+                <label for="events7" id="lable7">0</label>
+                <br>
+                HeadShot
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events8" id="8" onchange="gettotal(8)" disabled>
+                <label for="events8" id="lable8">0</label>
+                <br>
+                GNQ
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events9" id="9" onchange="gettotal(9)" disabled>
+                <label for="events9" id="lable9">0</label>
+                <br>
+                SoulBeats
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events10" id="10" onchange="gettotal(10)">
+                <label for="events10" id="lable10">0</label>
+                <br>
+                CSI
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events11" id="11" onchange="gettotal(11)"
+                    disabled>
+                <label for="events11" id="lable11">0</label>
+                <br>
+                KPop
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events12" id="12" onchange="gettotal(12)">
+                <label for="events12" id="lable12">0</label>
+                <br>
+                ThrustForExperienced
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events13" id="13" onchange="gettotal(13)">
+                <label for="events13" id="lable13">0</label>
+                <br>
+                AniCon
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events14" id="14" onchange="gettotal(14)"
+                    disabled>
+                <label for="events14" id="lable14">0</label>
+                <br>
+                General
+                <br>
+                <input type="number" min="0" max="10" value="0" name="events15" id="15" onchange="gettotal(15)"
+                    disabled>
+                <label for="events15" id="lable15">0</label>
+                <br>
+                ID <br>
+                <input type="text" min="0" max="10" value="0" name="events16" id="16" onchange="gettotal(16)">
+                <label for="events16" id="lable16">0</label>
+                <br>
+
+            </form>
+
+            <button onclick="fillform()"> Submit</button>
+            <br><br>
+            <br><br>
+        </div>
+        <div id="qrcode"></div>
+    </div>
+
+
+    <script>
+
+        var total = 0;
+
+        const generateQR = (total) => {
+            document.getElementById("qrcode").innerHTML = ""
+            new QRCode("qrcode", {
+                text: "upi://pay?cu=INR&pa=sivaigloo93@oksbi&am=" + total + "&pn=inquivesta&tn=customMessage&mode=01",
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        var link = "https://docs.google.com/forms/d/e/1FAIpQLSc_-pm2-LmI8whvnrKZti4WCmw3cpg0k5T0RyLnw0d74SBEIA/viewform?usp=pp_url";
+
+        const name = "entry.2004356401=";
+        const email = "entry.1412316162=";
+        const head = "entry.367251233=";
+        const phone = "entry.732566303=";
+        const due = "entry.542282722=";
+
+
+        const eList = [["Ailment+Act", 100], ["Critter+Hunt", 100], ["Paradigm", 100], ["Thrust", 100], ["Beat+The+Drop", 100], ["NutJob", 100], ["Rationale", 100], ["Fauxpert", 100], ["Crime+Scene+Investigation", 100], ["GNQ", 100], ["Headshot", 100], ["Anicon", 100], ["Chess", 100], ["SoulBeat", 100], ["K-Pop", 100], ["Karaoke", 100], ["Social-Nation", 100]];
+
+
+        function getVal(ID) {
+            // const val = document.querySelector('input').value;
+            var val = document.getElementById(ID).value;
+            // console.log(val);
+            return val;
+        }
+
+
+
+
+        function getCheck() {
+            for (var i = 0; i < 17; i++) {
+                if (document.getElementById(String(i)).checked) {
+                    // console.log("Here");
+                    // console.log(eList[i])
+                    link += head + eList[i][0] + "&";
+                    total += eList[i][1];
+                }
+            }
+        }
+
+        function Final() {
+            link += name + getVal("name") + "&" + phone + getVal("phone") + "&";
+            getCheck();
+            link += due + String(total);
+            // console.log(link)
+            // console.log("Clicked")
+            window.location.href = link;
+            link = "";
+            form = document.getElementById("regg");
+            form.reset();
+        }
+
+        const FEES =
+            [
+                ["email", 0],
+                ["AilmentAct", 50],
+                ["Fauxpert", 50],
+                ["CritterHunt", 50],
+                ["Rationale", 200],
+                ["BeatTheDrop", 150],
+                ["NutJob", 100],
+                ["ThrustForBeginners", 100],
+                ["Chess", 100],
+                ["HeadShot", 0],
+                ["GNQ", 50],
+                ["SoulBeats", 80],
+                ["CSI", 0],
+                ["KPop", 30],
+                ["ThrustForExperienced", 100],
+                ["AniCon", 0],
+                ["General", 150],
+                ["ID",0]
+            ]
+
+        let pfurl = [
+            "& entry.177605882=",
+            "& entry.1415377089=",
+            "& entry.849974900=",
+            "& entry.2127132569=",
+            "& entry.497419068=",
+            "& entry.136676403=",
+            "& entry.1735216993=",
+            "& entry.825555630=",
+            "& entry.1504969648=",
+            "& entry.507542958=",
+            "& entry.1895937108=",
+            "& entry.1992089374=",
+            "& entry.1775098860=",
+            "& entry.44338958=",
+            "& entry.2038245423=",
+            "& entry.373254621=",
+            "& entry.109710752=",
+            "& entry.1391363840=",
+            "& entry.232606146=Option+1"
+        ]
+
+        // console.log(FEES[16][0]);
+
+        function gettotal(id) {
+
+            let fees = FEES
+
+            var count = 0
+            var ticketCount = 0
+
+            inputs = document.getElementsByTagName('input')
+            for (let i = 1; i < 17; i++) {
+                let no = parseInt(inputs[i]["value"])
+                document.getElementById(String(i))
+
+                ticketCount += no
+                console.log(no);
+                let fee_ = fees[i][1]
+                // console.log(fee_);
+                let tot = no * fee_
+                document.getElementById('lable' + String(i - 1)).innerHTML = tot
+                count += tot;
+                // console.log(i);
+            }
+            
+            for (let i = 1; i < 17; i++) {
+                let no = parseInt(inputs[i]["value"])                
+            }
+            // console.log(count);
+
+            total = count
+            document.getElementById('')
+
+
+            // generate appropiate QR
+            generateQR(total)
+        }
+
+        let furl = []
+
+        function fillform() {
+            furl = []
+            furl[0]= pfurl[0]+document.getElementById("email").value
+            iterate(getNtickets)
+            furl.push("&entry.232606146=Option+1")
+            furl.push("& entry.1391363840="+document.getElementById())
+            furl.push("&entry.109710752=100"+total)
+            let url = furl.join("")
+            url = url.replace(/\s/g, '');
+            console.log(link+url);
+            // window.location.href=link+url
+            // n = document.getElementById(String(i)).value
+
+        }
+
+        function getNtickets(i){
+            furl[i] = pfurl[i]+ document.getElementById(String(i-1)).value
+        }
+
+        function iterate(fn) {
+            for (let i = 1; i < 17; i++) {
+                fn(i)
+            }
+        }
+
+        function handleSubmit() {
+            // console.log("");
+        }
+
+
+    </script>
+</body>
+
+</html>
